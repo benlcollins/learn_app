@@ -1,0 +1,44 @@
+<% if @link.errors.any? %>
+	<p>There were some problems submitting your form:</p>
+	<ul>
+		<% @link.errors.full_messages.each do |error| %>
+			<li>
+				<%= error %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
+
+
+
+<%= form_for @link do |f| %>
+	
+	<div>
+		<%= f.label :title %><br />
+		<%= f.text_field :title, autofocus: true %>
+	</div>
+
+	<div>
+		<%= f.label :link_url %><br />
+		<%= f.text_field :link_url %>
+	</div>
+
+	<div>
+		<%= f.label :year %><br />
+		<%= select_year(Date.today, start_year: 1950, end_year: 2015) %>
+	</div>
+
+	<div>
+		<%= f.label :tag_list, "Tags (separated by commas):" %><br />
+		<%= f.text_field :tag_list %>
+	</div>
+
+	<div>
+		<%= f.label :about_link %><br />
+		<%= f.text_area :about_link %>
+	</div>
+
+	<div>
+		<%= f.submit "Submit" %>
+	</div>
+<% end %>

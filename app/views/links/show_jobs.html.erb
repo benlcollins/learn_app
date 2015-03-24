@@ -1,0 +1,13 @@
+<h1><%= @result["title"] %></h1>
+<h2><%= @result["company"] %></h2>
+
+<ul>
+	<li><%= @result["location"] %></li>
+	<li><%= @result["type"] %></li>
+</ul>
+
+<%= raw @result["description"] %>
+
+<h3>How to apply:</h3>
+
+<%= raw @result["how_to_apply"] %>

@@ -1,0 +1,30 @@
+<img class="avatar" src="<%= @image_src %>"><br />
+No image? Set yours up <a href="http://en.gravatar.com/" target="_blank">here</a>
+
+<% if current_user == @user %>
+	<h1>Welcome <%= @user.username %></h1>	
+	<h2>Your Favorites:</h2>
+	<ul>
+		<% if @favorites.empty? %>
+			<p>You currently have no favorites!</p>
+		<% else %>
+			<% @favorites.each do |fav| %>
+				<li><%= link_to fav.title, link_path(fav.link_id) %></li>
+			<% end %>
+		<% end %>
+	</ul>
+<% else %>
+	<h1><%= @user.username %></h1>
+<% end %>
+
+<h2>Links submitted by <%= current_user == @user ? "you" : @user.username %>:</h2>
+
+<% if @links.empty? %>
+		<p>You have not posted any links yet!</p>
+<% else %>
+	<ul>
+		<% @links.each do |link| %>
+			<li><%= link_to link.title, link_path(link.id) %></li>
+		<% end %>
+	</ul>
+<% end %>

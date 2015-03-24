@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Uplearn</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header class="fixed">
+	<h1><%= link_to "Uplearn", links_path %></h1>
+	<h2>Find and share the best online learning resources</h2>
+	<ul>
+		<li>
+			<%= link_to "Home", links_path%>
+		</li>
+		<% if user_signed_in? %>
+		<li>
+			Hello <%= link_to current_user.username, user_path(current_user[:id]) %>. <%= link_to "Sign out?", destroy_user_session_path, :method => :delete %>
+		</li>
+		<% else %>
+		<li>
+			New user? <%= link_to "Register", new_user_registration_path %> / 
+			Existing user: <%= link_to "Sign in", new_user_session_path %>
+		</li>
+		<% end %>
+		<li>
+			<%= form_tag links_path, :method => "get" do %>
+				<%= text_field_tag(:search) %>
+				<%= submit_tag("Search") %>
+			<% end %>
+		</li>
+		<li>
+			<%= link_to "About", about_path %>
+		</li>
+		<li>
+			<%= link_to "Submit new link", new_link_path %>
+		</li>
+	</ul>
+</header>
+
+<!-- Flash notices from devise -->
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div class="container">
+	<%= yield %>
+</div>
+
+</body>
+</html>

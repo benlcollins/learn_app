@@ -1,0 +1,34 @@
+<div class="main-content">
+	<% @grouped_links.each do |date, links| %>
+		<h2><%= date == DateTime.now.utc.to_date ? "Today" : date %></h2>
+		<ul>
+			<% links.each do |link| %>
+				<li>
+					<%= link_to link.title, link_path(link.id) %> 
+					from <%= link.year %> 
+					posted at <%= link.created_at.strftime("%l:%M %P") %>
+					by <%= link_to link.user[:username], user_path(link.user[:id]) %><br />
+					Tagged: <% link.tags.each do |t| %>
+						<%= link_to t.name, tag_path(t) %>
+					<% end %>
+
+					<%= render partial: 'favorite_buttons', locals: {link: link} %>
+				</li><br />
+			<% end %>
+		</ul>
+	<% end %>
+</div>
+
+<div class="sidebar">
+	<h3>Jobs - powered by GITHUB</h3>
+	<ol>
+	 	<% @result.each do |r| %>
+	 		<li>
+	 			<%= link_to r["title"], job_path(r["id"]) %><br />
+	 			<%= r["location"] %><br />
+	 			<%= r["company"] %><br />
+	 			<%= r["type"] %><br />
+	 		</li><br />
+	 	<% end %>
+	 </ol>
+</div>

@@ -1,0 +1,41 @@
+<h1><%= @link.title %></h1>
+
+<div class="main-content">
+	<!-- Display screenshot and make it a clickable link -->
+	<a href="<%= @link.link_url %>" target="_blank">
+		<img src="https://www.browshot.com/screenshot/image/<%= @image_id %>?scale=1&key=<%= @key %>" width="500"><br />
+	</a>
+
+	<a href="<%= @link.link_url %>" target="_blank"><%= @link.link_url %></a><br />
+	<!--  link_to @link.link_url, @link.link_url}, :target => '_blank' -->
+
+	<p><%= @link.about_link %></p>
+	<p>Published in <%= @link.year %></p>
+	<p>Posted at <%= @link.created_at.strftime("%l:%M %P") %> by <%= link_to @link.user[:username], user_path(@link.user[:id]) %></p>
+
+	<% if @link.user == current_user %>
+
+		<!-- link to edit the submission -->
+		<%= link_to "Edit this submission", edit_link_path(@link.id) %>
+
+		<!-- button to delete the link -->
+		<%= form_for @link, :method => :delete do |f| %>
+			<%= f.submit "Delete link" %>
+		<% end %>
+
+	<% end %>
+</div>
+
+<div class="sidebar">
+	<h3>Jobs - powered by GITHUB</h3>
+	<ol>
+	 	<% @result.each do |r| %>
+	 		<li>
+	 			<%= r["title"] %><br />
+	 			<%= r["location"] %><br />
+	 			<%= r["company"] %><br />
+	 			<%= r["type"] %><br />
+	 		</li><br />
+	 	<% end %>
+	 </ol>
+</div>

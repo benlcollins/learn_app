@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/** {
+	border: 1px solid red  !important;
+}*/
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+header {
+	background-color: #e3e3e3;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+.main-content {
+	width: 65%;
+	float: left;
+}
+.sidebar {
+	width: 35%;
+	/*height: 750px;*/
+	float: right;
+	border-top: 25px solid orange;
+	border-right: 3px solid orange;
+	border-bottom: 3px solid orange;
+	border-left: 3px solid orange;
+}
+
+.notice {
+	/*padding: 5px;*/
+	background-color: green;
+	color: white;
+	width: 50%;
+	margin: 0 auto;
+}
+.alert {
+	/*padding: 5px;*/
+	background-color: red;
+	color: white;
+	width: 50%;
+	margin: 0 auto;
+}
+#error_explanation {
+	background-color: red;
+	color: white;
+	width: 80%;
+	margin: 0 auto;
+}
+.avatar {
+	border-radius: 50%;
+}
