@@ -9,7 +9,23 @@ No image? Set yours up <a href="http://en.gravatar.com/" target="_blank">here</a
 			<p>You currently have no favorites!</p>
 		<% else %>
 			<% @favorites.each do |fav| %>
-				<li><%= link_to fav.title, link_path(fav.link_id) %></li>
+				<li>
+					<%= link_to fav.title, link_path(fav.link_id) %>
+					<%= render partial: 'delete_favorite_button', locals: {fav: fav} %>
+				</li>
+			<% end %>
+		<% end %>
+	</ul>
+	<h2>Your Saved Jobs:</h2>
+	<ul>
+		<% if @savedjobs.empty? %>
+			<p>You currently have no saved jobs!</p>
+		<% else %>
+			<% @savedjobs.each do |fav| %>
+				<li>
+					<%= link_to fav.title, job_path(fav.job_id) %>
+					<%= render partial: 'delete_savedjob_button', locals: {fav: fav} %>
+				</li>
 			<% end %>
 		<% end %>
 	</ul>

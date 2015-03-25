@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@links = @user.links.reverse
 		@favorites = @user.favorites
+		@savedjobs = @user.savedjobs
 
 		# grab user's gravatar, if they have one
 		hash = Digest::MD5.hexdigest(@user.email)

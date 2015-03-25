@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {registrations: "registrations"}
   resources :users, only: [:show]
   resources :favorites, only: [:index, :create, :destroy]
+  resources :savedjobs, only: [:index, :create, :destroy]
   get '/about' => 'pages#about'
   get 'tags/:tag' => 'links#index', as: :tag
-  get 'jobs/:id' => 'links#show_jobs', as: :job
+  get 'jobs/:id' => 'pages#show_jobs', as: :job
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

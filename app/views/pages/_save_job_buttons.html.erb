@@ -1,0 +1,14 @@
+<!-- user is logged in, so need to determine if this job is already saved or not -->
+
+<!-- Not yet a favorite -->
+<% if @savedjob.new_record? %>
+	<%= form_for @savedjob do |f| %>
+		<%= hidden_field_tag :job_id, @result["id"] %>
+		<%= hidden_field_tag :title, @result["title"] %>
+		<%= f.submit "Save for later" %>
+	<% end %>
+<% else %>
+	<%= form_for @savedjob, :method => :delete do |f| %>
+		<% f.submit "Remove from favorites" %>
+	<% end %>
+<% end %>

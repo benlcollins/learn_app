@@ -31,7 +31,7 @@
 	<ol>
 	 	<% @result.each do |r| %>
 	 		<li>
-	 			<%= r["title"] %><br />
+	 			<%= link_to r["title"], job_path(r["id"]) %><br />
 	 			<%= r["location"] %><br />
 	 			<%= r["company"] %><br />
 	 			<%= r["type"] %><br />

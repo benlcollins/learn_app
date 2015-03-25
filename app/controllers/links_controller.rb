@@ -13,7 +13,6 @@ class LinksController < ApplicationController
 			@links = Link.all
 		end
 
-		# binding.pry
 		# group all of the links into date groups
 		@grouped_links = @links.order("created_at").reverse.group_by { |link| link.created_at.to_date }
 		
@@ -39,13 +38,14 @@ class LinksController < ApplicationController
 			@result.push(result[i])
 			i += 1
 		end
-		# binding.pry
-
 	end
 
 	def show
 		@url = @link.link_url
 
+		# call to Browshot api to grab screenshot, created when link submitted
+		# try javascript - check ready state, complete, loaded? 
+		# rescu (for future reference)
 		# make call out to browshot api for screen capture
 		@key = ENV['API_KEY']
 		client = Browshot.new(@key)
@@ -69,27 +69,30 @@ class LinksController < ApplicationController
 
 	end
 
-	def show_jobs
-		response = HTTParty.get("https://jobs.github.com/positions/#{params[:id]}.json")
-		@result = JSON.parse(response.body)
-	end
-
 	def new
 		@link = Link.new
 	end
 
 	def create
+		# setup new link
 		@link = Link.new(strong_upload_params)
 		year = params[:date][:year]
 		@link.year = year
 		@link.user_id = current_user[:id]
+
+		# call to Browshot api to grab screenshot
+		@url = @link.link_url
+		binding.pry
+		@key = ENV['API_KEY']
+		client = Browshot.new(@key)
+		screenshot = client.screenshot_create(@url, { 'instance_id' => 12 })
+
+		# save new link to database
 		if @link.save
 			flash[:notice] = "Link submitted successfully"
 			redirect_to links_path
 		else
-			# binding.pry
 			flash[:alert] = "Link not saved"
-			# @link = Link.new
 			render :new
 		end
 	end
