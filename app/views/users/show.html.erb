@@ -1,7 +1,11 @@
-<img class="avatar" src="<%= @image_src %>"><br />
-No image? Set yours up <a href="http://en.gravatar.com/" target="_blank">here</a>
+<!-- User profile page -->
+
+<img class="avatar" src="<%= @image_src %>">
 
 <% if current_user == @user %>
+	<br />
+	No image? Set yours up <a href="http://en.gravatar.com/" target="_blank">here</a>
+
 	<h1>Welcome <%= @user.username %></h1>	
 	<h2>Your Favorites:</h2>
 	<ul>
@@ -30,7 +34,7 @@ No image? Set yours up <a href="http://en.gravatar.com/" target="_blank">here</a
 		<% end %>
 	</ul>
 <% else %>
-	<h1><%= @user.username %></h1>
+	<h1>User: <%= @user.username %></h1>
 <% end %>
 
 <h2>Links submitted by <%= current_user == @user ? "you" : @user.username %>:</h2>

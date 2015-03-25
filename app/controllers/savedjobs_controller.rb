@@ -6,13 +6,15 @@ class SavedjobsController < ApplicationController
 		user = current_user[:id]
 		job = Savedjob.new(:user_id => user, :job_id => params[:job_id], :title => params[:title])
 		job.save
-		redirect_to links_path
+		flash[:notice] = "Job successfully added to your profile"
+		redirect_to user_path(current_user[:id])
 	end
 
 	def destroy
 		job = Savedjob.find(params[:id])
 		job.destroy
-		redirect_to links_path
+		flash[:alert] = "Job successfully removed from your profile"
+		redirect_to user_path(current_user[:id])
 	end
 
 end

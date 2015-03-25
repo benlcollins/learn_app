@@ -16,6 +16,7 @@
 		</li>
 		<% if user_signed_in? %>
 		<li>
+			<img class="avatar-mini" src="<%= user_gravatar %>">
 			Hello <%= link_to current_user.username, user_path(current_user[:id]) %>. <%= link_to "Sign out?", destroy_user_session_path, :method => :delete %>
 		</li>
 		<% else %>

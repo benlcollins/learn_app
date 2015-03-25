@@ -40,10 +40,10 @@ header {
 	width: 35%;
 	/*height: 750px;*/
 	float: right;
-	border-top: 25px solid orange;
-	border-right: 3px solid orange;
-	border-bottom: 3px solid orange;
-	border-left: 3px solid orange;
+	border-top: 35px solid orange;
+	border-right: 5px solid orange;
+	border-bottom: 5px solid orange;
+	border-left: 5px solid orange;
 }
 
 .notice {
@@ -67,5 +67,10 @@ header {
 	margin: 0 auto;
 }
 .avatar {
+	border-radius: 50%;
+}
+.avatar-mini {
+	width: 32px;
+	height: 32px;
 	border-radius: 50%;
 }

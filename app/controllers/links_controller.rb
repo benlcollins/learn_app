@@ -18,9 +18,7 @@ class LinksController < ApplicationController
 		
 		# if user is signed in, pass all their favorites into @favorite instance variable
 		if user_signed_in?
-			@favorites = current_user.favorites.map do |fav|
-				fav.link_id
-			end
+			user_favorites
 		end
 		@favorite = Favorite.new
 
@@ -46,16 +44,24 @@ class LinksController < ApplicationController
 		# call to Browshot api to grab screenshot, created when link submitted
 		# try javascript - check ready state, complete, loaded? 
 		# rescu (for future reference)
-		# make call out to browshot api for screen capture
+
+		# currently creating a new screenshot, need to only pull existing screenshot from api
+		# persist the screenshot id's to a model and then retrieve here and pass through to view
 		@key = ENV['API_KEY']
-		client = Browshot.new(@key)
-		screenshot = client.screenshot_create(@url, { 'instance_id' => 12 })
-		@image_id = screenshot["id"]
+		@image_id = @link.browshot_id
+		browshot_info = HTTParty.get("https://api.browshot.com/api/v1/screenshot/info?id=#{@image_id}&key=#{@key}")
+		@status = JSON.parse(browshot_info.body)["status"]
+		# if status == "in_queue"
+		# 	@image_
+
+		# binding.pry
+		# https://api.browshot.com/api/v1/screenshot/info?id=12589&key=SGnnU1eAn9BWL2ttKdNSuNr71CFudn
 
 		# code to pull github jobs
 		if params[:tag]
 			description = params[:tag].gsub(' ','+')
 		end
+		
 		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{description}")
 		result = JSON.parse(response.body)
 
@@ -66,7 +72,6 @@ class LinksController < ApplicationController
 			@result.push(result[i])
 			i += 1
 		end
-
 	end
 
 	def new
@@ -82,11 +87,13 @@ class LinksController < ApplicationController
 
 		# call to Browshot api to grab screenshot
 		@url = @link.link_url
-		binding.pry
 		@key = ENV['API_KEY']
 		client = Browshot.new(@key)
 		screenshot = client.screenshot_create(@url, { 'instance_id' => 12 })
-
+		
+		# add screenshot id as link attribute
+		@link.browshot_id = screenshot["id"]
+		
 		# save new link to database
 		if @link.save
 			flash[:notice] = "Link submitted successfully"
@@ -126,6 +133,12 @@ class LinksController < ApplicationController
 
 	def link_find
 		@link = Link.find(params[:id])
+	end
+
+	def user_favorites
+		@favorites = current_user.favorites.map do |fav|
+			fav.link_id
+		end
 	end
 
 end

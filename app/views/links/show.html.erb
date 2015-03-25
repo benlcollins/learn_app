@@ -1,12 +1,22 @@
+<p>
+	<%= link_to "Home", links_path %> / Resource details
+</p>
+
 <h1><%= @link.title %></h1>
 
 <div class="main-content">
 	<!-- Display screenshot and make it a clickable link -->
+	<% if @status.empty? %>
+		<p>Screenshot status: <%= @status %></p>
+	<% end %>
 	<a href="<%= @link.link_url %>" target="_blank">
-		<img src="https://www.browshot.com/screenshot/image/<%= @image_id %>?scale=1&key=<%= @key %>" width="500"><br />
+		<img src="https://www.browshot.com/screenshot/image/<%= @image_id %>?scale=1&key=<%= @key %>" width="500" alt=
+		"Tutorial screenshot not ready yet. Be patient, they sometimes take a while to arrive."><br />
 	</a>
 
-	<a href="<%= @link.link_url %>" target="_blank"><%= @link.link_url %></a><br />
+	<p>
+		<a href="<%= @link.link_url %>" target="_blank"><%= @link.link_url %></a>
+	</p>
 	<!--  link_to @link.link_url, @link.link_url}, :target => '_blank' -->
 
 	<p><%= @link.about_link %></p>
