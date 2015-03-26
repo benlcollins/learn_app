@@ -1,12 +1,12 @@
 <div class="main-content">
 	<% @grouped_links.each do |date, links| %>
-		<h2><%= date == DateTime.now.utc.to_date ? "Today" : date %></h2>
+		<h2><%= date == DateTime.now.to_date ? "Today" : date %></h2>
 		<ul>
 			<% links.each do |link| %>
 				<li>
 					<%= link_to link.title, link_path(link.id) %> 
 					from <%= link.year %> 
-					posted at <%= link.created_at.strftime("%l:%M %P") %>
+					posted at <%= link.created_at.getlocal.strftime("%l:%M %P") %>
 					by <%= link_to link.user[:username], user_path(link.user[:id]) %><br />
 					Tagged: <% link.tags.each do |t| %>
 						<%= link_to t.name, tag_path(t) %>

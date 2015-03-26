@@ -14,7 +14,7 @@ class LinksController < ApplicationController
 		end
 
 		# group all of the links into date groups
-		@grouped_links = @links.order("created_at").reverse.group_by { |link| link.created_at.to_date }
+		@grouped_links = @links.order("created_at").reverse.group_by { |link| link.created_at.getlocal.to_date }
 		
 		# if user is signed in, pass all their favorites into @favorite instance variable
 		if user_signed_in?
@@ -36,26 +36,20 @@ class LinksController < ApplicationController
 			@result.push(result[i])
 			i += 1
 		end
+		# binding.pry
 	end
 
 	def show
 		@url = @link.link_url
 
-		# call to Browshot api to grab screenshot, created when link submitted
 		# try javascript - check ready state, complete, loaded? 
 		# rescu (for future reference)
 
-		# currently creating a new screenshot, need to only pull existing screenshot from api
-		# persist the screenshot id's to a model and then retrieve here and pass through to view
+		# call to Browshot api to grab screenshot, created when link submitted
 		@key = ENV['API_KEY']
 		@image_id = @link.browshot_id
 		browshot_info = HTTParty.get("https://api.browshot.com/api/v1/screenshot/info?id=#{@image_id}&key=#{@key}")
 		@status = JSON.parse(browshot_info.body)["status"]
-		# if status == "in_queue"
-		# 	@image_
-
-		# binding.pry
-		# https://api.browshot.com/api/v1/screenshot/info?id=12589&key=SGnnU1eAn9BWL2ttKdNSuNr71CFudn
 
 		# code to pull github jobs
 		if params[:tag]

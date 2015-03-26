@@ -6,7 +6,15 @@
 	<br />
 	No image? Set yours up <a href="http://en.gravatar.com/" target="_blank">here</a>
 
-	<h1>Welcome <%= @user.username %></h1>	
+	<h1>Welcome <%= @user.username %></h1>
+	
+	<h2>Your Stats:</h2>
+	<ul>
+		<li>You have <%= @favorites.count %> favorites.</li>
+		<li>You have <%= @savedjobs.count %> saved jobs.</li>
+		<li>You have submitted <%= @links.count %> links.</li>
+	</ul>
+
 	<h2>Your Favorites:</h2>
 	<ul>
 		<% if @favorites.empty? %>
