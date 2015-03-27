@@ -4,15 +4,19 @@
 		<ul>
 			<% links.each do |link| %>
 				<li>
-					<%= link_to link.title, link_path(link.id) %> 
-					from <%= link.year %> 
-					posted at <%= link.created_at.getlocal.strftime("%l:%M %P") %>
-					by <%= link_to link.user[:username], user_path(link.user[:id]) %><br />
-					Tagged: <% link.tags.each do |t| %>
-						<%= link_to t.name, tag_path(t) %>
-					<% end %>
-
-					<%= render partial: 'favorite_buttons', locals: {link: link} %>
+					<div class="link-bar-1">
+						<%= link_to link.title, link_path(link.id), :class => "group link-title" %>
+						<%= render partial: 'favorite_buttons', locals: {link: link} %>
+						<div class="group link-meta">
+							posted by <%= link_to link.user[:username], user_path(link.user[:id]), :class => "link-meta-submitter" %>
+							at <%= link.created_at.getlocal.strftime("%l:%M %P") %>
+						</div>
+					</div>
+					<div class="group link-bar-2">
+						<% link.tags.each do |t| %>
+							<%= link_to t.name, tag_path(t), :class => "link-tag" %>
+						<% end %>
+					</div>
 				</li><br />
 			<% end %>
 		</ul>
@@ -20,15 +24,25 @@
 </div>
 
 <div class="sidebar">
-	<h3>Jobs - powered by GITHUB</h3>
+	<div class="job-sidebar-heading group"><h3>Jobs from </h3><a href="https://github.com/" target="_blank">
+		<img class="github-logo" src="/assets/github/GitHub_Logo.png" alt="GitHub">
+		<img class="github-logo" src="/assets/github/GitHub-Mark-32px.png"></a>
+	</div>
+	<% if @tag %>
+		<div class="job-post">
+			Showing GitHub jobs relating to <%= @tag %>
+		</div>
+	<% end %>
 	<ol>
 	 	<% @result.each do |r| %>
-	 		<li>
-	 			<%= link_to r["title"], job_path(r["id"]) %><br />
-	 			<%= r["location"] %><br />
-	 			<%= r["company"] %><br />
-	 			<%= r["type"] %><br />
-	 		</li><br />
+	 		<div class="job-post">
+	 			<li>
+		 			<%= link_to r["title"], job_path(r["id"]), :class => "job-post-link" %><br />
+		 			<%= link_to r["location"], job_path(r["id"]) %><br />
+		 			<%= link_to r["company"], job_path(r["id"]) %><br />
+		 			<%= link_to r["type"], job_path(r["id"]) %><br />
+	 			</li>
+	 		</div>
 	 	<% end %>
 	 </ol>
 </div>

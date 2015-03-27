@@ -7,46 +7,88 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class="fixed">
-	<h1><%= link_to "Uplearn", links_path %></h1>
-	<h2>Find and share the best online learning resources</h2>
-	<ul>
-		<li>
-			<%= link_to "Home", links_path%>
-		</li>
-		<% if user_signed_in? %>
-		<li>
-			<img class="avatar-mini" src="<%= user_gravatar %>">
-			Hello <%= link_to current_user.username, user_path(current_user[:id]) %>. <%= link_to "Sign out?", destroy_user_session_path, :method => :delete %>
-		</li>
-		<% else %>
-		<li>
-			New user? <%= link_to "Register", new_user_registration_path %> / 
-			Existing user: <%= link_to "Sign in", new_user_session_path %>
-		</li>
-		<% end %>
-		<li>
-			<%= form_tag links_path, :method => "get" do %>
-				<%= text_field_tag(:search) %>
-				<%= submit_tag("Search") %>
-			<% end %>
-		</li>
-		<li>
-			<%= link_to "About", about_path %>
-		</li>
-		<li>
-			<%= link_to "Submit new link", new_link_path %>
-		</li>
-	</ul>
+<header class="group">
+
+	<!-- Header First Row -->
+	<div class="group header-row-1">
+		<div class="main-heading">
+			<h1><a href="/links"><div class="logo-letter">Up</div><div class="logo">Learn</div></a></h1>
+		</div>
+		
+		<div class="user-actions">	
+			<ul>
+				<% if user_signed_in? %>
+				<li>
+					<div class="user-actions-avatar">
+						<img class="avatar-mini" src="<%= user_gravatar %>">
+					</div>
+					<div class="user-actions-words">
+						Hello <%= link_to current_user.username, user_path(current_user[:id]), :class => "user-actions-link" %>. <%= link_to "Sign out?", destroy_user_session_path, :method => :delete, :class => "user-actions-link" %>
+					</div>
+				</li>
+				<% else %>
+				<li>
+					<div class="user-actions-words">
+						New user? <%= link_to "Sign up", new_user_registration_path, :class => "user-actions-link" %> / 
+						<%= link_to "Sign in", new_user_session_path, :class => "user-actions-link" %>
+					</div>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Header Second Row -->
+	<div class="group header-row-2">
+		<h2><div class="sub-logo">Social learning</div></h2>
+		
+		<ul>
+			<div class="search">
+				<li>
+					<%= form_tag links_path, :method => "get" do %>
+						<%= text_field_tag(:search, nil, class: "search-box") %>
+						<%= submit_tag("Search", class: "search-button") %>
+					<% end %>
+				</li>
+			</div>
+			<div class="header-navigation">
+				<li>
+					<%= link_to "Add New Resource", new_link_path, :class => "header-navigation-link" %>
+				</li>
+				<li>
+					<%= link_to "About", about_path, :class => "header-navigation-link" %>
+				</li>
+			</div>
+		</ul>
+	</div>
 </header>
 
 <!-- Flash notices from devise -->
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if notice %>
+	<p class="notice"><%= notice %></p>
+<% elsif alert %>
+	<p class="alert"><%= alert %></p>
+<% end %>
 
-<div class="container">
+<div class="group container-large">
 	<%= yield %>
 </div>
+
+<footer class="group">
+	<div class="footer-navigation">
+		<ul>
+			<li>
+				<%= link_to "Home", links_path, :class => "footer-navigation-link" %>
+			</li>
+			<li>
+				<%= link_to "About", about_path, :class => "footer-navigation-link" %>
+			</li>
+			<li>
+				<%= link_to "Submit new link", new_link_path, :class => "footer-navigation-link" %>
+			</li>
+		</ul>
+	</div>
+</footer>
 
 </body>
 </html>

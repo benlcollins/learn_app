@@ -1,0 +1,19 @@
+<p class="breadcrumb">
+	<%= link_to "Home", links_path %> / Resource details
+</p>
+
+<h1>User: <%= @user.username %></h1>
+
+<div class="group detail-bar">
+	<h2 class="stat-header">Links submitted by <%= @user.username %>:</h2>
+
+	<% if @links.empty? %>
+			<p><%= @user.username %> has not posted any links.</p>
+	<% else %>
+		<ul>
+			<% @links.each do |link| %>
+				<li><%= link_to link.title, link_path(link.id), :class => "user-link-list" %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</div>

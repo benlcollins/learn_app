@@ -7,6 +7,9 @@ class LinksController < ApplicationController
 		# basic search functionality
 		if params[:search]
 			@links = Link.where("title LIKE ?", "%#{params[:search]}%")
+			if @links.empty?
+				flash[:alert] = "Sorry, we couldn't find that resource for you"
+			end
 		elsif params[:tag]
 			@links = Link.tagged_with(params[:tag])
 		else
@@ -24,9 +27,10 @@ class LinksController < ApplicationController
 
 		# code to pull github jobs
 		if params[:tag]
-			description = params[:tag].gsub(' ','+')
+			tag = params[:tag].gsub(' ','+')
+			@tag = Tag.find(tag).name
 		end
-		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{description}")
+		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{tag}")
 		result = JSON.parse(response.body)
 
 		@result = []

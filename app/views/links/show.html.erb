@@ -1,27 +1,30 @@
-<p>
+<div class="main-content">
+
+<p class="breadcrumb">
 	<%= link_to "Home", links_path %> / Resource details
 </p>
 
 <h1><%= @link.title %></h1>
-
-<div class="main-content">
-	<!-- Display screenshot and make it a clickable link -->
-	<% if @status.empty? %>
+	
+	<!-- Check if status of screenshot is finished, display api info if not  -->
+	<% if !@status == "finished" %>
 		<p>Screenshot status: <%= @status %></p>
 	<% end %>
+	
+	<!-- Display screenshot and make it a clickable link -->
 	<a href="<%= @link.link_url %>" target="_blank">
 		<img src="https://www.browshot.com/screenshot/image/<%= @image_id %>?scale=1&key=<%= @key %>" width="500" alt=
-		"Tutorial screenshot not ready yet. Be patient, they sometimes take a while to arrive."><br />
+		"Tutorial screenshot not ready yet. Be patient, they sometimes take a while to arrive." 
+		class="screenshot-image"><br />
 	</a>
 
-	<p>
+	<p class="link-details">
 		<a href="<%= @link.link_url %>" target="_blank"><%= @link.link_url %></a>
 	</p>
-	<!--  link_to @link.link_url, @link.link_url}, :target => '_blank' -->
 
-	<p><%= @link.about_link %></p>
-	<p>Published in <%= @link.year %></p>
-	<p>Posted at <%= @link.created_at.strftime("%l:%M %P") %> by <%= link_to @link.user[:username], user_path(@link.user[:id]) %></p>
+	<p class="link-details"><%= @link.about_link %></p>
+	<p class="link-details">Published in <%= @link.year %></p>
+	<p class="link-details">Posted on <%= @link.created_at.getlocal.to_date %> by <%= link_to @link.user[:username], user_path(@link.user[:id]) %></p>
 
 	<% if @link.user == current_user %>
 
@@ -37,15 +40,17 @@
 </div>
 
 <div class="sidebar">
-	<h3>Jobs - powered by GITHUB</h3>
+	<div class="job-sidebar-heading"><h3>Jobs - powered by <a href="https://github.com/" target="_blank">GitHub</a></h3></div>
 	<ol>
 	 	<% @result.each do |r| %>
-	 		<li>
-	 			<%= link_to r["title"], job_path(r["id"]) %><br />
-	 			<%= r["location"] %><br />
-	 			<%= r["company"] %><br />
-	 			<%= r["type"] %><br />
-	 		</li><br />
+	 		<div class="job-post">
+		 		<li>
+		 			<%= link_to r["title"], job_path(r["id"]) %><br />
+		 			<%= r["location"] %><br />
+		 			<%= r["company"] %><br />
+		 			<%= r["type"] %><br />
+		 		</li>
+		 	</div>
 	 	<% end %>
 	 </ol>
 </div>

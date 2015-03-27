@@ -13,32 +13,34 @@
 
 <%= form_for @link do |f| %>
 	
-	<div>
-		<%= f.label :title %><br />
+	<div class="field">
+		<div class="label">Title <span id="red-star">*</span></div>
 		<%= f.text_field :title, autofocus: true %>
 	</div>
 
-	<div>
-		<%= f.label :link_url %><br />
+	<div class="field">
+		<div class="label">Link to resource (URL) <span id="red-star">*</span></div>
 		<%= f.text_field :link_url %>
 	</div>
-
-	<div>
-		<%= f.label :year %><br />
-		<%= select_year(Date.today, start_year: 1950, end_year: 2015) %>
-	</div>
-
-	<div>
-		<%= f.label :tag_list, "Tags (separated by commas):" %><br />
+	
+	<div class="field">
+		<div class="label">Tags (separated by commas) <span id="red-star">*</span></div>
 		<%= f.text_field :tag_list %>
 	</div>
 
-	<div>
-		<%= f.label :about_link %><br />
-		<%= f.text_area :about_link %>
+	<div class="field">
+		<%= f.label :year, :class => "label" %>
+		<%= select_year(Date.today, start_year: 1950, end_year: 2015) %>
+	</div><br />
+
+	<div class="field">
+		<%= f.label :about_link, "Endorse this resource: Why did you find it useful? Would you recommend it?", :class => "label" %>
+		<%= f.text_area :about_link, value: "" %>
 	</div>
 
-	<div>
+	<div class="small-label required"><span id="red-star">*</span> = required field</div>
+	
+	<div class="actions">
 		<%= f.submit "Submit" %>
 	</div>
 <% end %>

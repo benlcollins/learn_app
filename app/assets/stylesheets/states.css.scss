@@ -1,0 +1,45 @@
+/* -------------------------------------------------
+Modules Styles
+------------------------------------------------- */
+
+
+/* -------------------------------------------------
+Link Hover States
+------------------------------------------------- */
+.main-heading a:hover .logo {
+	/*text-decoration: underline;*/
+	/*background-color: orange;*/
+	/*box-shadow: 0px 0px 0px 0.14em orange;*/
+}
+.main-heading a:hover .logo-letter {
+	/*text-decoration: underline;*/
+	background-color: orange;
+	box-shadow: 0px 0px 0px 0.14em orange;
+}
+a.header-navigation-link:hover {
+	/*text-decoration: underline;*/
+	border-bottom: 2px solid white;
+}
+a.footer-navigation-link:hover {
+	/*text-decoration: underline;*/
+	border-bottom: 2px solid white;
+}
+a.link-title:hover {
+	text-decoration: underline;
+}
+a.link-tag:hover {
+	background-color: orange;
+}
+a.user-actions-link:hover {
+	color: orange;
+	text-decoration: underline;
+}
+a.link-meta-submitter:hover {
+	color: orange;
+	text-decoration: underline;
+}
+a.job-post-link:hover {
+	color: orange;
+	text-decoration: underline;
+}
+/*.logo_position a:hover .logo_letter */

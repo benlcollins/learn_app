@@ -1,0 +1,589 @@
+/* -------------------------------------------------
+Modules Styles
+------------------------------------------------- */
+
+
+/* -------------------------------------------------
+Typography
+------------------------------------------------- */
+h1 {
+	font: 24px/36px helvetica, arial, verdana;
+	letter-spacing: 0.1em;
+}
+h2 {
+	font: 18px/24px helvetica, arial, verdana;
+	/*text-transform: uppercase;*/
+	letter-spacing: 0.1em;
+	/*padding: 20px 0;*/
+}
+
+
+
+/* -------------------------------------------------
+Header styles - Row 1
+------------------------------------------------- */
+.main-heading {
+	padding: 5px;
+}
+.logo {
+	float: left;
+	/*text-transform: uppercase;*/
+	/*padding: 15px 0 15px 35px;*/
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	/*border: 1px solid red !important;*/
+	padding: 9px 0 0 4px;
+	margin-right: 10px;
+}
+.logo-letter {
+	float: left;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #08699D;
+	color: #fff;
+	/*font: 24px/32px "Fredoka One", Helvetica, Arial, sans-serif;*/
+	height: 2em;
+	width: 2em;
+	text-align: center;
+	padding: 5px 0 0 2px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	box-shadow: 0px 0px 0px 0.14em #08699D;
+}
+.user-actions {
+	float: right;
+	/*border: 1px solid red !important;*/
+	margin-right: 25px;
+}
+.user-actions-avatar {
+	float: left;
+}
+.user-actions-words {
+	padding: 10px 0 0 5px;
+	float: left;
+	font: 14px/16px helvetica, arial, verdana;
+}
+.user-actions-link {
+	font-weight: bold;
+	/*color: white;*/
+	color: #49708f;
+	text-decoration: none;
+}
+
+/* -------------------------------------------------
+Header styles - Row 2
+------------------------------------------------- */
+.sub-logo {
+	float: left;
+	/*margin-left: 2px;*/
+	color: #fff;
+	/*font: 14px/24px helvetica, arial, verdana;*/
+	/*padding-top: 10px;*/
+	/*border: 1px solid red !important;*/
+}
+.search {
+	width: 50%;
+	/*float: left;*/
+	/*margin: 0 auto;*/
+	margin-left: 10%;
+	display: inline-block;
+	/*border: 1px solid red;*/
+}
+.search-box {
+	width: 80%;
+	/*margin-right: 0px !important;*/
+	/*padding-right: 0px !important;*/
+	background: #fff;
+	border: 1px solid #c6c7cc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
+	-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
+	color: #636466;
+	padding: 7px;
+	/*margin-top: 6px;*/
+	/*width: 100%;*/
+	/*margin-bottom: 10px;*/
+	border-radius: 5px;
+}
+.search-button {
+	font: 14px/16px helvetica, arial, verdana;
+	text-transform: uppercase;
+	width: 18%;
+	/*margin-left: 0px !important;*/
+	/*padding-left: 0px !important;*/
+	border: 0;
+	background: -webkit-linear-gradient(#49708f, #293f50);
+	background: -moz-linear-gradient(#49708f, #293f50);
+	background: -linear-gradient(#49708f, #293f50);
+	color: #fff;
+	cursor: pointer;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+	padding: 8px 16px;
+	border-radius: 5px;
+	/*margin: 10px 0 20px 0;*/
+}
+.header-navigation {
+	margin-right: 25px;
+	margin-top: 5px;
+	float: right;
+	/*float: left;*/
+	display: inline-block;
+	/*border: 1px solid green;*/
+}
+.header-navigation li {
+	/*list-style-type: none;*/
+	/*text-transform: uppercase;*/
+	letter-spacing: 0.1em;
+	display: inline-block;
+	padding-left: 20px;
+}
+.header-navigation-link {
+	text-transform: uppercase;
+	font: 14px/16px helvetica, arial, verdana;
+}
+.header-navigation a {
+	color: #fff;
+	padding-bottom: 2px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+/* -------------------------------------------------
+Footer styles
+------------------------------------------------- */
+.footer-navigation {
+	margin: 30px 10px;
+	padding: 15px 0;
+	float: left;
+}
+.footer-navigation li {
+	/*list-style-type: none;*/
+	/*text-transform: uppercase;*/
+	letter-spacing: 0.1em;
+	display: inline-block;
+	padding-left: 20px;
+}
+.footer-navigation-link {
+	text-transform: uppercase;
+	font: 14px/16px helvetica, arial, verdana;
+}
+.footer-navigation a {
+	color: #49708f;
+	padding-bottom: 2px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+
+/* -------------------------------------------------
+Main list styling
+------------------------------------------------- */
+.main-content ul {
+	list-style-type: none;
+}
+.main-content li {
+	/*border: 1px solid red;*/
+	margin: 2px 20px;
+	/*padding: 10px 0;*/
+	background-color: #f6f6f6;
+	/*border-radius: 15px;*/
+}
+.link-bar-1 {
+	border-top: 2px solid #49708f;
+	padding: 10px 0 5px 15px;
+}
+.link-bar-2 {
+	padding: 5px 0 10px 15px;
+}
+.link-title {
+	font: 22px/24px helvetica, arial, verdana;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	color: black;
+	float: left;
+	/*border: 1px solid blue;*/
+	/*font-style: bold;*/
+}
+.link-meta {
+	font: 14px/16px helvetica, arial, verdana;
+	padding: 3px 0 5px 0;
+	float: left;
+	/*border: 1px solid blue;*/
+}
+.link-meta-submitter {
+	font-weight: bold;
+	/*color: white;*/
+	color: #49708f;
+	text-decoration: none;
+}
+
+
+/* -------------------------------------------------
+Show link details styling
+------------------------------------------------- */
+.screenshot-image {
+	padding: 8px;
+	border: 2px solid #e3e3e3;
+	margin: 10px 0;
+	text-align: center;
+	border-radius: 5px;
+}
+.link-details {
+	padding: 10px 0;
+
+}
+
+
+
+/* -------------------------------------------------
+User profile styling
+------------------------------------------------- */
+table {
+	width: 80%;
+	/*margin-right: 25px;*/
+	/*margin: 0 auto;*/
+	/*border: 1px solid blue;*/
+}
+td {
+	padding: 10px 0;
+}
+.table-row {
+	border-bottom: 2px solid #49708f;
+}
+.user-stat-left {
+	/*width: 60%;*/
+	/*border: 1px solid red;*/
+	padding-left: 20px;
+	/*border-right: 2px solid #e3e3e3;*/
+}
+.user-stat-right {
+	/*width: 20%;*/
+	text-align: right;
+	padding-right: 20px;
+}
+.stat-header {
+	/*text-align: center;*/
+	margin: 10px 0;
+	padding: 5px;
+}
+.main-table-left {
+	width: 10%;
+	padding-right: 5px;
+}
+.main-table-right {
+	width: 90%;
+	padding-left: 5px;
+}
+.user-link-list {
+	/*padding: 10px 0;*/
+	/*border: 1px solid red;*/
+	line-height: 1.5em;
+}
+.user-list-header {
+	border-bottom: 1px solid #49708f;
+	padding: 15px 0 5px 0;
+	margin: 20px 0 10px 0;
+}
+
+
+/* -------------------------------------------------
+Job Sidebar styles
+------------------------------------------------- */
+.job-sidebar-heading {
+	font: 18px/24px helvetica, arial, verdana;
+	letter-spacing: 0.05em;
+	color: white;
+	background-color: orange;
+	padding: 15px 10px;
+}
+.job-sidebar-heading h3 {
+	float: left;
+}
+.sidebar ol {
+	/*list-style-type: decimal;*/
+}
+.job-post {
+	font: 14px/16px helvetica, arial, verdana;
+	padding: 8px 15px;
+}
+.job-content h1 {
+	padding-top: 10px;
+}
+.job-content h2 {
+	padding: 10px 0;
+}
+.job-content h3 {
+	padding: 10px 0;	
+}
+.job-content p {
+	font: 14px/18px helvetica, arial, verdana;
+	padding: 2px 0 8px 10px;
+}
+.job-content li {
+	font: 14px/18px helvetica, arial, verdana;
+	padding: 3px 0 3px 10px;
+}
+.job-post a {
+	color: black;
+	text-decoration: none;
+}
+.job-post-link {
+	color: #49708f !important;
+	font-weight: bold;
+	/*color: white;*/
+	text-decoration: none;
+}
+
+
+
+
+/* -------------------------------------------------
+About page styling
+------------------------------------------------- */
+.about-page h1 {
+	padding-top: 10px;
+}
+.about-page h2 {
+	padding: 10px 0;
+}
+.about-page h3 {
+	padding: 10px 0;	
+}
+.about-page p {
+	font: 14px/18px helvetica, arial, verdana;
+	padding: 2px 0 8px 10px;
+}
+.about-page li {
+	font: 14px/18px helvetica, arial, verdana;
+	padding: 3px 0 3px 10px;
+}
+
+
+/* -------------------------------------------------
+Form styling
+------------------------------------------------- */
+.devise-content h2 {
+	padding: 20px 0;
+}
+.devise-content h3 {
+	padding: 10px 0;
+	margin-top: 20px;
+}
+.devise-content form {
+	border: 1px solid #c6c7cc;
+	border-radius: 5px;
+	font: 14px/1.4 helvetica, arial, verdana;
+	overflow: hidden;
+	width: 400px;
+}
+.devise-content input {
+	border-radius: 5px;
+	font: 14px/1.4 helvetica, arial, verdana;
+	margin: 0;
+}
+.new_user, .edit_user {
+	padding: 20px 20px 0 20px;
+}
+.label {
+	color: #395870;
+	display: block;
+	font-weight: bold;
+	margin: 10px 0 3px 0;
+}
+.required {
+	font-style: italic;
+}
+.field input {
+	background: #fff;
+	border: 1px solid #c6c7cc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
+	-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
+	color: #636466;
+	padding: 6px;
+	/*margin-top: 6px;*/
+	width: 100%;
+	margin-bottom: 10px;
+}
+.field textarea {
+	background: #fff;
+	border: 1px solid #c6c7cc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
+	-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
+	color: #636466;
+	padding: 6px;
+	/*margin-top: 6px;*/
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+}
+.actions input {
+	border: 0;
+	background: -webkit-linear-gradient(#49708f, #293f50);
+	background: -moz-linear-gradient(#49708f, #293f50);
+	background: -linear-gradient(#49708f, #293f50);
+	color: #fff;
+	cursor: pointer;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+	padding: 8px 16px;
+	margin: 10px 0 20px 0;
+}
+.devise-links {
+	padding: 40px 0;
+}
+.cancel form {
+	/*border: 1px solid red;*/
+	border: 0;
+	margin-bottom: 20px;
+	padding: 10px 0;
+}
+.cancel-btn {
+	border: 0;
+	background: -webkit-linear-gradient(#49708f, #293f50);
+	background: -moz-linear-gradient(#49708f, #293f50);
+	background: -linear-gradient(#49708f, #293f50);
+	color: #fff;
+	cursor: pointer;
+	padding: 8px 16px;
+	margin: 10px 0 20px 0;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+
+
+
+/* -------------------------------------------------
+Tag styling
+------------------------------------------------- */
+.link-tag {
+	font: 12px/12px helvetica, arial, verdana;
+	color: white;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.15em;
+	margin-right: 8px;
+	padding: 6px 4px 4px 4px;
+	background-color: #49708f;
+	/*background-color: #CAE1FF;  #66CD00*/
+	border-radius: 5px;
+}
+
+
+
+/* -------------------------------------------------
+Specific button styling
+------------------------------------------------- */
+/*For some reason, this class has "_" not "-" in name */
+.new_favorite, .edit_favorite {
+	float: right;
+	margin-right: 10px;
+	/*border: 1px solid red;*/
+}
+.new_favorite input {
+	cursor: pointer;
+	/*height: 32px;*/
+	/*width: 32px;*/
+	/*border: 0;*/
+	/*background: #f6f6f6 url(/assets/star1.png) 4px 50% no-repeat;*/
+	/*color: red;*/
+}
+.new_favorite input:hover {
+	/*height: 32px;*/
+	/*width: 32px;*/
+	/*border: 0;*/
+	/*background: #FFD700 url(/assets/star1.png) 4px 50% no-repeat;*/
+	/*cursor: pointer;*/
+	/*color: red;*/
+}
+.edit_favorite input {
+	cursor: pointer;
+	/*height: 32px;*/
+	/*width: 32px;*/
+	/*border: 0;*/
+	/*background: #FFD700 url(/assets/star2.png) 4px 50% no-repeat;*/
+}
+
+
+
+/* -------------------------------------------------
+Flash notices and error notes
+------------------------------------------------- */
+.notice {
+	font: 16px/16px helvetica, arial, verdana;
+	letter-spacing: 0.05em;
+	width: 70%;
+	margin: 20px auto;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	border-radius: 0.5rem;
+	background-color: #49bb5b;
+	border: 1px solid #2B823A;
+}
+.alert {
+	font: 16px/16px helvetica, arial, verdana;
+	letter-spacing: 0.05em;
+	width: 70%;
+	margin: 20px auto;
+	text-align: center;
+	padding: 10px;
+	color: red;
+	border-radius: 0.5rem;
+	background-color: #f2dede;
+	border: 1px solid #eed3d7;
+}
+#error_explanation {
+	background-color: red;
+	color: white;
+	width: 80%;
+	margin: 0 auto;
+}
+
+
+/* -------------------------------------------------
+Avatar styling
+------------------------------------------------- */
+.avatar {
+	border-radius: 50%;
+}
+.avatar-mini {
+	@extend .avatar;
+	width: 32px;
+	height: 32px;
+}
+
+
+
+/* -------------------------------------------------
+Misc Navigation styling
+------------------------------------------------- */
+.breadcrumb, .small-label {
+	font: 12px/12px helvetica, arial, verdana;
+}
+.breadcrumb {
+	padding: 15px 0;
+}
+.small-label {
+	padding-top: 8px;
+}
+#red-star {
+	color: red;
+}
+.github-logo {
+	/*width: 100%;*/
+	height: 24px;
+	border: 0;
+	float: left;
+}
+
+
+
+
+

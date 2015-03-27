@@ -1,0 +1,113 @@
+/* -------------------------------------------------
+Layout Styles
+------------------------------------------------- */
+header {
+	background-color: #49708f;
+	background: -webkit-linear-gradient(#fff, #49708f);
+	background: -moz-linear-gradient(#fff, #49708f);
+	background: -linear-gradient(#fff, #49708f);
+	/*border-bottom: 1px solid #000;*/
+}
+.header-row-1, .header-row-2 {
+	/*padding: 5px 10px 0 10px;*/
+	/*border: 1px solid red !important;*/
+}
+.header-row-1 {
+	padding: 5px 10px 0 10px;
+	/*border: 1px solid red;*/
+}
+.header-row-2 {
+	/*border: 1px solid blue;*/
+	padding: 10px 10px 20px 10px;
+}
+.container-large {
+	width: 85%;
+	min-height: 550px;
+	margin: 0 auto;
+}
+.container-small {
+	width: 70%;
+	min-height: 550px;
+	margin: 0 auto;
+}
+.group:before,
+.group:after {
+	content: "";
+	display: table;
+}
+.group:after {
+	clear:both;
+}
+.group {
+	clear:both;
+	*zoom: 1;
+}
+footer {
+	/*background-color: #49708f;*/
+	/*background: -webkit-linear-gradient(#fff, #49708f);*/
+	/*background: -moz-linear-gradient(#fff, #49708f);*/
+	/*background: -linear-gradient(#fff, #49708f);*/
+	border-top: 1px solid #49708f;
+}
+.main-content {
+	width: 70%;
+	float: left;
+	margin: 25px 0;
+	padding: 0 10px;
+}
+.sidebar {
+	width: 30%;
+	float: right;
+	margin: 49px 0 30px 0;
+	border: 5px solid orange;
+	border-radius: 15px;
+}
+.single-col-content {
+	width: 70%;
+	min-height: 550px;
+	margin: 20px auto 40px auto;
+	padding: 0 10px;
+}
+.submit-link-content {
+	width: 50%;
+	min-height: 550px;
+	margin: 20px auto 40px auto;
+	padding: 0 10px;
+}
+
+
+/* -------------------------------------------------
+User profile page layouts
+------------------------------------------------- */
+.summary-bar {
+	margin: 40px 0;
+	padding: 10px;
+	/*background-color: #ededed;*/
+	/*border: 1px solid #7e7e7e;*/
+	/*border-radius: 15px;*/
+	/*border-bottom: 1px solid #CAE1FF;*/
+}
+.detail-bar {
+	margin: 40px 0;
+	padding: 10px;
+}
+.left-summary-box {
+	float: left;
+	width: 50%;
+	height: 100%;
+	padding: 10px 0;
+	text-align: center;
+	/*border-right: 5px solid #CAE1FF;*/
+	/*border: 1px solid blue;*/
+}
+.right-summary-box {
+	float: right;
+	width: 45%;
+	/*padding-left: 20px;*/
+	/*border: 1px solid blue;*/
+}
+.center-content {
+	/*width: 80%;*/
+	/*margin: 0 auto;*/
+}
+

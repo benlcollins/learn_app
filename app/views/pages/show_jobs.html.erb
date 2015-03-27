@@ -1,19 +1,23 @@
-<p>
-	<%= link_to "Home", links_path %> / Job details
-</p>
+<div class="single-col-content job-content">
 
-<%= render partial: 'save_job_buttons' %>
+	<p class="breadcrumb">
+		<%= link_to "Home", links_path %> / Job details
+	</p>
 
-<h1><%= @result["title"] %></h1>
-<h2><%= @result["company"] %></h2>
+	<%= render partial: 'save_job_buttons' %>
 
-<ul>
-	<li><%= @result["location"] %></li>
-	<li><%= @result["type"] %></li>
-</ul>
+	<h1><%= @result["title"] %></h1>
+	<h2><%= @result["company"] %></h2>
 
-<%= raw @result["description"] %>
+	<ul>
+		<li><%= @result["location"] %></li>
+		<li><%= @result["type"] %></li>
+	</ul>
 
-<h3>How to apply:</h3>
+	<%= raw @result["description"] %>
 
-<%= raw @result["how_to_apply"] %>
+	<h2>How to apply:</h2>
+
+	<%= raw @result["how_to_apply"] %>
+
+</div>
