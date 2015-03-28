@@ -77,6 +77,16 @@ input.favorite-button:hover, input.unfavorite-button:hover {
 	/*padding-bottom: 1px;*/
 	border: 1px solid orange;
 }
-
+.breadcrumb a:hover {
+	color: orange;
+	text-decoration: underline;
+}
+a.link-details-out:hover {
+	color: orange;
+}
+.about-page a:hover {
+	/*color: orange;*/
+	text-decoration: underline;
+}
 
 

@@ -1,29 +1,106 @@
-<div class="single-col-content about-page">
+<div class="container-small about-page">
+
+	<!-- MAKE ALL LINKS TO TUTORIALS OR RESOURCES WITHIN THE SITE (I.E. TO UPLEARN INFO PAGES) -->
 
 	<h1>About uplearn</h1>
 
-	<p>Uplearn is the best place on the web to share and find great learning resources, created by
+	<p>Uplearn is a place to share and find great learning resources, created by
 	<a href="http://www.benlcollins.com/" target="_blank">Ben Collins</a> as a final project for 
 	<a href="https://generalassemb.ly/education/back-end-web-development/washington-dc" target="_blank">General 
 		Assembly's Back End Web Development</a> course in Washington, DC (Jan 2015 cohort).</p>
 
-	<h2>Technology Stack</h2>
+	<h1>Technology</h1>
 
-	<p>This app is built using the following technology:</p>
+	<h2>Introduction</h2>
+	<p>This app is built using the following technologies:</p>
 	<ul>
-		<li>Ruby on Rails Framework</li>
-		<li>Sass CSS sheets, implemented according to the SMACSS architecture</li>
+		<li>Written in Ruby, using...</li>
+		<li>...the Ruby on Rails Framework...</li>
+		<li>...with a Postgresql database on the back-end.</li>
+		<li>Front end built using Sass and pure CSS, implemented according to the SMACSS architecture.</li>
+		<li>Hosted on Heroku</li>
+		<li>Google Analytics code for tracking website usage</li>
 	</ul>
 
-	<p>The dev environment was a Mac, Sublime Text 2, Terminal</p>
+	<h2>Notes on the dev environment</h2>
 
-	<h2>Resources</h2>
+	<ul>
+		<li>Mac, running OS X Yosemite</li>
+		<li>Tested on browsers: Chrome, Safari and Firefox</li>
+		<li>Code inspector in Chrome (access using Cmd + Shift + I)</li>
+		<li>Color Picker extension for Chrome, to find colors used on web pages I liked</li>
+		<li>Code written in <a href="http://www.sublimetext.com/" target="_blank">Sublime Text 2</a></li>
+		<li>Git version control, hosted on <a href="https://github.com/benlcollins" target="_blank">GitHub</a></li>
+		<li>Markdown files read using <a href="http://25.io/mou/" target="_blank">Mou</a></li>
+		<li><a href="http://spectacleapp.com/" target="_blank">Spectacle</a> for easily sizing and moving windows</li>
+		<li>Terminal for commands, git, manually accessing the database</li>
+		<li><a href="https://evernote.com/" target="_blank">Evernote</a> for organizing thoughts and keeping track of coding tips</li>
+		<li><a href="https://slack.com/" target="_blank">Slack</a> for team communication throughout our class</li>
+	</ul>
+
+	<h2>Core Features</h2>
+
+	<ol>
+		<li>Homepage showing list of shared links</li>
+		<li>Ability for user to register/login/logout</li>
+		<li>Ability for user to submit new link</li>
+		<li>Click on any link to see the details page and screenshot</li>
+		<li>Basic Search functionality</li>
+		<li>System for user to favorite links</li>
+		<li>GitHub jobs in the sidebar</li>
+		<li>Click on any job to see the details</li>
+		<li>System for user to bookmark job for later</li>
+		<li>Basic Front-End styling</li>
+		<li>About page</li>
+		<li>Gravatar API to show user's avatar</li>
+		<li>User profile page showing activity on app</li>
+	</ol>
+
+	<h2>Feature wishlist (coming soon!)</h2>
+
+
+	<h2>Mobile?</h2>
+
+	<p>Yes, I know this site looks like a regurgitated dogs dinner in a mobile browser, and that is not suprising. It was built
+		entirely on a desktop without using any front-end frameworks or themes. Aside from being a great learning experience, it was hugely fun to put this together. One of my top priorities is to make the front-end responsive, or, failing that, implement a responsive framework, such as <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
+
+
+	<h2>APIs</h2>
+
+	<p>This app uses three API's to get information from third parties: firstly, a screenshot grabbing API so I can display a screenshot of the tutorials, second, the github jobs API to pull jobs into the sidebar, and, thirdly, the Wordpress Gravatar API to pull in a user's avatar based off their email.</p>
+
+	<h3>Screenshot API</h3>
+
+	<p>I'm using an API service called <a href="https://browshot.com/" target="_blank">Browshot</a> which gives 100 free API calls per month, and is relatively cheap to bulk buy credits for additional calls.</p>
+
+	<p>One issues is that it takes around 10 - 15s for browshot to grab the screen image, which is pretty amazing, but still means that a user can submit a link and them immediately click on it to see the details page, but no screenshot will yet render.</p>
+
+	<p>So I've put the API call into the create method, i.e. when a user submits a link, call the API then so that the Browshot API ID is saved into the database and the image is being prepared. When a user then visits a detail page, the Browshot API ID is available from the database immediately, and the API is just called to return an existing image (or possibly queued image) and not to create a new image.</p>
+
+	<p>A fuller solution might incorporate a javascript snippet to test if image is ready and loads, and if not, then to keep looping through a timed call to the API (e.g. every 1 sec) until image loads. You'll see this on my future features list!</p>
+
+
+	<h2>Notes on using Devise Authentication Gem</h2>
+
+	<p>I had to modify the registration to include and persist the username to database with custom registration controller. The following tutorial was extremely useful in helping me work this out: <a href="http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html" target="_blank">http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html</a>.</p>
+
+	<h2>Setting up Tags</h2>
+
+	<p>Built a separate app to test out tagging before trying to implement in main app. Considered using acts-as-taggable-on gem but decided to build my own system, as I only needed limited capability. Following two tutorials were helpful:</p>
+	<ul>
+		<li><a href="http://www.sitepoint.com/tagging-scratch-rails/" target="_blank">http://www.sitepoint.com/tagging-scratch-rails/</a></li>
+		<li><a href="http://railscasts.com/episodes/382-tagging" target="_blank">http://railscasts.com/episodes/382-tagging</a></li>
+	</ul>
+
+
+
+	<h2>Other useful resources</h2>
 
 	<h3>Books:</h3>
 
 	<ul>
-		<li>Learn HTML and CSS - Shay Howe</li>
-		<li>The Well-Grounded Rubyist - David Black</li>
+		<li><a href="http://learn.shayhowe.com/html-css/" target="_blank">Learn HTML and CSS by Shay Howe</a> - I can't recommend this highly enough, a great introduction to front-end</li>
+		<li><a href="http://www.amazon.com/Well-Grounded-Rubyist-David-Black/dp/1617291692/" target="_blank">The Well-Grounded Rubyist - David Black</a></li>
 		<li>The Rails 4 Way - Obie Fernandez and Kevin Faustino</li>
 	</ul>
 

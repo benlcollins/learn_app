@@ -2,18 +2,27 @@
 	<%= link_to "Home", links_path %> / Resource details
 </p>
 
-<h1>User: <%= @user.username %></h1>
+<div class="group summary-bar">
+	<div class="left-summary-box">
+		<img class="avatar" src="<%= @image_src %>">		
+	</div>
+	<div class="right-summary-box">
+		<h1 class="user-heading">User: <%= @user.username %></h1>
+	</div>
+</div>
 
 <div class="group detail-bar">
-	<h2 class="stat-header">Links submitted by <%= @user.username %>:</h2>
+	<div class="center-content">
+		<h2 class="user-list-header">
+			<%= @user.username %> has <%= @links.empty? ? "not submitted any Resources yet!" : "submitted " + @links.count.to_s + " Resources:"%>
+		</h2>
 
-	<% if @links.empty? %>
-			<p><%= @user.username %> has not posted any links.</p>
-	<% else %>
-		<ul>
+		<table class="user-profile-table">
 			<% @links.each do |link| %>
-				<li><%= link_to link.title, link_path(link.id), :class => "user-link-list" %></li>
+				<tr>
+					<td><%= link_to link.title, link_path(link.id), :class => "main-table-left user-table-link" %></td>
+				</tr>
 			<% end %>
-		</ul>
-	<% end %>
+		</table>
+	</div>
 </div>

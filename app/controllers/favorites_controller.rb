@@ -4,7 +4,6 @@ class FavoritesController < ApplicationController
 
 	
 	def create
-		# setup the favorite to save to database
 		user = current_user[:id]
 		link = params[:link_id]
 		title = Link.find(link)[:title]

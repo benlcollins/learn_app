@@ -105,6 +105,8 @@ Header styles - Row 2
 	-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
 	color: #636466;
 	padding: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
 	/*margin-top: 6px;*/
 	/*width: 100%;*/
 	/*margin-bottom: 10px;*/
@@ -126,7 +128,8 @@ Header styles - Row 2
 	letter-spacing: 0.1em;
 	font-weight: bold;
 	padding: 8px 16px;
-	/*border-radius: 5px;*/
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	margin-left: -7px;
 }
 .header-navigation {
@@ -264,7 +267,10 @@ Show link details styling
 }
 .link-details {
 	padding: 10px 0;
-
+}
+.link-details-out {
+	padding: 10px 0;
+	color: #49708f;
 }
 
 
@@ -439,22 +445,43 @@ Job Sidebar styles
 /* -------------------------------------------------
 About page styling
 ------------------------------------------------- */
+.about-page {
+	margin: 50px auto;
+}
 .about-page h1 {
-	padding-top: 10px;
+	font-weight: bold;
+	padding: 10px 0;
 }
 .about-page h2 {
 	padding: 10px 0;
+	text-decoration: underline;
 }
 .about-page h3 {
-	padding: 10px 0;	
+	padding: 10px 0;
+	text-decoration: underline;
 }
 .about-page p {
-	font: 14px/18px helvetica, arial, verdana;
+	font: 16px/24px helvetica, arial, verdana;
+	letter-spacing: 0.05em;
 	padding: 2px 0 8px 10px;
 }
+.about-page ul {
+	list-style-type: circle;
+}
+.about-page ol {
+	list-style-type: decimal;
+}
 .about-page li {
-	font: 14px/18px helvetica, arial, verdana;
-	padding: 3px 0 3px 10px;
+	font: 16px/24px helvetica, arial, verdana;
+	padding: 3px;
+	margin-left: 40px;
+}
+.about-page a {
+	font: 16px/22px helvetica, arial, verdana;
+	color: orange;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 
@@ -658,6 +685,11 @@ Misc Navigation styling
 }
 .breadcrumb {
 	padding: 15px 0;
+}
+.breadcrumb a {
+	color: #49708f;
+	font-weight: bold;
+	text-decoration: none;
 }
 .small-label {
 	color: #49708f;

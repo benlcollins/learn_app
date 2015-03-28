@@ -1,14 +1,20 @@
-<!-- user is logged in, so need to determine if this job is already saved or not -->
-
-<!-- Not yet a favorite -->
-<% if @savedjob.new_record? %>
+<!-- user is not logged in, so always show favorite button (requires login to use though) -->
+<% if !user_signed_in? %>
 	<%= form_for @savedjob do |f| %>
-		<%= hidden_field_tag :job_id, @result["id"] %>
-		<%= hidden_field_tag :title, @result["title"] %>
 		<%= f.submit "Save Job", :class => "favorite-button" %>
 	<% end %>
+
+<!-- user is logged in, so need to determine if this job is already saved or not -->
 <% else %>
-	<%= form_for @savedjob, :method => :delete do |f| %>
-		<% f.submit "Remove from favorites", :class => "favorite-button" %>
+	<% if @savedjob.new_record? %>
+		<%= form_for @savedjob do |f| %>
+			<%= hidden_field_tag :job_id, @result["id"] %>
+			<%= hidden_field_tag :title, @result["title"] %>
+			<%= f.submit "Save Job", :class => "favorite-button" %>
+		<% end %>
+	<% else %>
+		<%= form_for @savedjob, :method => :delete do |f| %>
+			<% f.submit "Remove from favorites", :class => "favorite-button" %>
+		<% end %>
 	<% end %>
 <% end %>

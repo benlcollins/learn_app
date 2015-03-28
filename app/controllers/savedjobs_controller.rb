@@ -6,7 +6,9 @@ class SavedjobsController < ApplicationController
 		user = current_user[:id]
 		job = Savedjob.new(:user_id => user, :job_id => params[:job_id], :title => params[:title])
 		job.save
+
 		flash[:notice] = "Job successfully added to your saved jobs"
+		
 		redirect_to request.referrer
 	end
 

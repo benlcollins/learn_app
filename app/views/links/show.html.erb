@@ -1,10 +1,13 @@
 <div class="main-content">
 
-<p class="breadcrumb">
-	<%= link_to "Home", links_path %> / Resource details
-</p>
+	<p class="breadcrumb">
+		<%= link_to "Home", links_path %> / Resource details
+	</p>
 
-<h1><%= @link.title %></h1>
+	<h1><%= @link.title %></h1>
+
+	<p>Posted by <%= link_to @link.user[:username], user_path(@link.user[:id]) %>
+		on <%= @link.created_at.getlocal.to_date.strftime("%A, %d %B") %></p>
 	
 	<!-- Check if status of screenshot is finished, display api info if not  -->
 	<% if !@status == "finished" %>
@@ -19,12 +22,12 @@
 	</a>
 
 	<p class="link-details">
-		<a href="<%= @link.link_url %>" target="_blank"><%= @link.link_url %></a>
+		<a href="<%= @link.link_url %>" target="_blank" class="link-details-out"><%= @link.link_url %></a>
 	</p>
 
+	<!-- <h2>Endorsement and further details:</h2> -->
 	<p class="link-details"><%= @link.about_link %></p>
-	<p class="link-details">Published in <%= @link.year %></p>
-	<p class="link-details">Posted on <%= @link.created_at.getlocal.to_date %> by <%= link_to @link.user[:username], user_path(@link.user[:id]) %></p>
+	<p class="link-details">This resource was originally published in <%= @link.year %>.</p>
 
 </div>
 
