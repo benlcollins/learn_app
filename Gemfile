@@ -49,3 +49,6 @@ gem 'httparty' 											# for api calls
 gem 'devise'											# for user profiles
 gem 'browshot'											# api for screenshots
 gem 'dotenv-rails', :groups => [:development, :test]	# env variable to keep sensitive data hidden
+gem 'rails_12factor', group: :production				# heroku gem for deployment
+
+

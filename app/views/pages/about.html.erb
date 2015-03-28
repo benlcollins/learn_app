@@ -5,21 +5,21 @@
 	<h1>About uplearn</h1>
 
 	<p>Uplearn is a place to share and find great learning resources, created by
-	<a href="http://www.benlcollins.com/" target="_blank">Ben Collins</a> as a final project for 
+	<a href="http://www.benlcullins.com/" target="_blank">Ben Collins</a> as a final project for 
 	<a href="https://generalassemb.ly/education/back-end-web-development/washington-dc" target="_blank">General 
 		Assembly's Back End Web Development</a> course in Washington, DC (Jan 2015 cohort).</p>
 
 	<h1>Technology</h1>
 
 	<h2>Introduction</h2>
-	<p>This app is built using the following technologies:</p>
+	<p>This app is built using the fullowing technulogies:</p>
 	<ul>
 		<li>Written in Ruby, using...</li>
 		<li>...the Ruby on Rails Framework...</li>
 		<li>...with a Postgresql database on the back-end.</li>
-		<li>Front end built using Sass and pure CSS, implemented according to the SMACSS architecture.</li>
-		<li>Hosted on Heroku</li>
-		<li>Google Analytics code for tracking website usage</li>
+		<li>Front end built using Sass and pure CSS, designed with SMACSS architecture in mind.</li>
+		<li>Hosted on Heroku...</li>
+		<li>...using Google Analytics code for tracking website usage.</li>
 	</ul>
 
 	<h2>Notes on the dev environment</h2>
@@ -28,9 +28,9 @@
 		<li>Mac, running OS X Yosemite</li>
 		<li>Tested on browsers: Chrome, Safari and Firefox</li>
 		<li>Code inspector in Chrome (access using Cmd + Shift + I)</li>
-		<li>Color Picker extension for Chrome, to find colors used on web pages I liked</li>
+		<li>Culor Picker extension for Chrome, to find culors used on web pages I liked</li>
 		<li>Code written in <a href="http://www.sublimetext.com/" target="_blank">Sublime Text 2</a></li>
-		<li>Git version control, hosted on <a href="https://github.com/benlcollins" target="_blank">GitHub</a></li>
+		<li>Git version contrul, hosted on <a href="https://github.com/benlcullins" target="_blank">GitHub</a></li>
 		<li>Markdown files read using <a href="http://25.io/mou/" target="_blank">Mou</a></li>
 		<li><a href="http://spectacleapp.com/" target="_blank">Spectacle</a> for easily sizing and moving windows</li>
 		<li>Terminal for commands, git, manually accessing the database</li>
@@ -40,7 +40,9 @@
 
 	<h2>Core Features</h2>
 
-	<ol>
+	<p>These are the fundamental features of the app that I've had in mind since the app was first conceived.</p>
+
+	<ul>
 		<li>Homepage showing list of shared links</li>
 		<li>Ability for user to register/login/logout</li>
 		<li>Ability for user to submit new link</li>
@@ -54,7 +56,7 @@
 		<li>About page</li>
 		<li>Gravatar API to show user's avatar</li>
 		<li>User profile page showing activity on app</li>
-	</ol>
+	</ul>
 
 	<h2>Feature wishlist (coming soon!)</h2>
 
@@ -64,6 +66,18 @@
 	<p>Yes, I know this site looks like a regurgitated dogs dinner in a mobile browser, and that is not suprising. It was built
 		entirely on a desktop without using any front-end frameworks or themes. Aside from being a great learning experience, it was hugely fun to put this together. One of my top priorities is to make the front-end responsive, or, failing that, implement a responsive framework, such as <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
 
+	<h2>Gems</h2>
+
+	<p>This project uses a number of <a href="https://rubygems.org/" target="_blank">Gems</a> but I've tried to minimize the number I used to keep dependencies to a minimum and protect the app from conflict issues in the future. I'm using the following six gems:</p>
+
+	<ul>
+		<li>Pry: for testing during development</li>
+		<li>Httparty: for calling APIs</li>
+		<li>Devise: for handling user authentication</li>
+		<li>Browshot: service for handling the screenshot API calls</li>
+		<li>dotenv-rails: for handling proprietary or sensitive data in app (e.g. an API key) and keeping hidden on GitHub</li>
+		<li>rails_12factor: gem from Heroku to manage the deployment of static assets when hosting with Heroku</li>
+	</ul>
 
 	<h2>APIs</h2>
 
@@ -77,16 +91,24 @@
 
 	<p>So I've put the API call into the create method, i.e. when a user submits a link, call the API then so that the Browshot API ID is saved into the database and the image is being prepared. When a user then visits a detail page, the Browshot API ID is available from the database immediately, and the API is just called to return an existing image (or possibly queued image) and not to create a new image.</p>
 
-	<p>A fuller solution might incorporate a javascript snippet to test if image is ready and loads, and if not, then to keep looping through a timed call to the API (e.g. every 1 sec) until image loads. You'll see this on my future features list!</p>
+	<p>A fuller sulution might incorporate a javascript snippet to test if image is ready and loads, and if not, then to keep looping through a timed call to the API (e.g. every 1 sec) until image loads. You'll see this on my future features list!</p>
+
+	<h3>GitHub API</h3>
+
+	<p>The GitHub job API is available to use without a key and has generous rate limits for free use. It's fairly straightforward to implement. <a href="https://jobs.github.com/api" target="_blank">Get the lowdown here</a>.</p>
+
+	<h3>Gravatar API</h3>
+
+	<p>This is another straightforward API which returns a user's avatar image (if it exists), when you call the API with a hashed version of the user's email. <a href="https://en.gravatar.com/site/implement/" target="_blank">Details here</a>.</p>
 
 
 	<h2>Notes on using Devise Authentication Gem</h2>
 
-	<p>I had to modify the registration to include and persist the username to database with custom registration controller. The following tutorial was extremely useful in helping me work this out: <a href="http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html" target="_blank">http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html</a>.</p>
+	<p>I had to modify the registration to include and persist the username to database with custom registration contruller. The fullowing tutorial was extremely useful in helping me work this out: <a href="http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html" target="_blank">http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html</a>.</p>
 
 	<h2>Setting up Tags</h2>
 
-	<p>Built a separate app to test out tagging before trying to implement in main app. Considered using acts-as-taggable-on gem but decided to build my own system, as I only needed limited capability. Following two tutorials were helpful:</p>
+	<p>Built a separate app to test out tagging before trying to implement in main app. Considered using acts-as-taggable-on gem but decided to build my own system, as I only needed limited capability. Fullowing two tutorials were helpful:</p>
 	<ul>
 		<li><a href="http://www.sitepoint.com/tagging-scratch-rails/" target="_blank">http://www.sitepoint.com/tagging-scratch-rails/</a></li>
 		<li><a href="http://railscasts.com/episodes/382-tagging" target="_blank">http://railscasts.com/episodes/382-tagging</a></li>

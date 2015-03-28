@@ -78,7 +78,7 @@ Header styles - Row 2
 ------------------------------------------------- */
 .sub-logo {
 	float: left;
-	/*margin-left: 2px;*/
+	margin-left: 6px;
 	color: #fff;
 	/*font: 14px/24px helvetica, arial, verdana;*/
 	/*padding-top: 10px;*/
@@ -458,12 +458,13 @@ About page styling
 }
 .about-page h3 {
 	padding: 10px 0;
-	text-decoration: underline;
+	/*text-decoration: underline;*/
+	font-style: italic;
 }
 .about-page p {
 	font: 16px/24px helvetica, arial, verdana;
 	letter-spacing: 0.05em;
-	padding: 2px 0 8px 10px;
+	padding: 2px 0 12px 10px;
 }
 .about-page ul {
 	list-style-type: circle;
