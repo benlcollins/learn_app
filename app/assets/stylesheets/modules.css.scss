@@ -266,7 +266,11 @@ Show link details styling
 	border-radius: 5px;
 }
 .link-details {
-	padding: 10px 0;
+	/*padding: 10px 0;*/
+	font: 16px/24px helvetica, arial, verdana;
+	letter-spacing: 0.05em;
+	padding: 2px 10px 12px 10px;
+	margin-right: 25px;
 }
 .link-details-out {
 	padding: 10px 0;
