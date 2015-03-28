@@ -29,12 +29,12 @@ Header styles - Row 1
 	float: left;
 	/*text-transform: uppercase;*/
 	/*padding: 15px 0 15px 35px;*/
-	color: black;
+	color: #fff;
 	font-weight: bold;
 	text-decoration: none;
 	/*border: 1px solid red !important;*/
 	padding: 9px 0 0 4px;
-	margin-right: 10px;
+	margin-left: 3px;
 }
 .logo-letter {
 	float: left;
@@ -63,12 +63,14 @@ Header styles - Row 1
 	padding: 10px 0 0 5px;
 	float: left;
 	font: 14px/16px helvetica, arial, verdana;
+	color: #fff;
 }
 .user-actions-link {
 	font-weight: bold;
 	/*color: white;*/
-	color: #49708f;
+	color: orange;
 	text-decoration: none;
+	padding-bottom: 2px;
 }
 
 /* -------------------------------------------------
@@ -92,19 +94,21 @@ Header styles - Row 2
 }
 .search-box {
 	width: 80%;
+	font: 14px/16px helvetica, arial, verdana;
 	/*margin-right: 0px !important;*/
 	/*padding-right: 0px !important;*/
 	background: #fff;
-	border: 1px solid #c6c7cc;
+	/*border: 1px solid #c6c7cc;*/
+	border: 0;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
 	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
 	-box-shadow: inset 0 1px 1px rgba(0,0,0, .1);
 	color: #636466;
-	padding: 7px;
+	padding: 10px;
 	/*margin-top: 6px;*/
 	/*width: 100%;*/
 	/*margin-bottom: 10px;*/
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 .search-button {
 	font: 14px/16px helvetica, arial, verdana;
@@ -112,17 +116,18 @@ Header styles - Row 2
 	width: 18%;
 	/*margin-left: 0px !important;*/
 	/*padding-left: 0px !important;*/
-	border: 0;
-	background: -webkit-linear-gradient(#49708f, #293f50);
-	background: -moz-linear-gradient(#49708f, #293f50);
-	background: -linear-gradient(#49708f, #293f50);
+	border: 2px solid white;
+	background-color: #3A3A3A;
+	/*background: -webkit-linear-gradient(#49708f, #293f50);*/
+	/*background: -moz-linear-gradient(#49708f, #293f50);*/
+	/*background: -linear-gradient(#49708f, #293f50);*/
 	color: #fff;
 	cursor: pointer;
 	letter-spacing: 0.1em;
 	font-weight: bold;
 	padding: 8px 16px;
-	border-radius: 5px;
-	/*margin: 10px 0 20px 0;*/
+	/*border-radius: 5px;*/
+	margin-left: -7px;
 }
 .header-navigation {
 	margin-right: 25px;
@@ -189,14 +194,16 @@ Main list styling
 	/*border: 1px solid red;*/
 	margin: 2px 20px;
 	/*padding: 10px 0;*/
-	background-color: #f6f6f6;
-	/*border-radius: 15px;*/
+	background-color: #f9f9f9;
+	border: 1px solid #e3e3e3;
+	border-radius: 5px;
 }
 .link-bar-1 {
-	border-top: 2px solid #49708f;
+	/*border-left: 1px solid #49708f;*/
 	padding: 10px 0 5px 15px;
 }
 .link-bar-2 {
+	/*border-left: 1px solid #49708f;*/
 	padding: 5px 0 10px 15px;
 }
 .link-title {
@@ -205,12 +212,14 @@ Main list styling
 	text-decoration: none;
 	color: black;
 	float: left;
+	padding: 5px 5px 3px 5px;
+	/*margin-bottom: 5px;*/
 	/*border: 1px solid blue;*/
 	/*font-style: bold;*/
 }
 .link-meta {
 	font: 14px/16px helvetica, arial, verdana;
-	padding: 3px 0 5px 0;
+	padding: 3px 0 5px 5px;
 	float: left;
 	/*border: 1px solid blue;*/
 }
@@ -219,6 +228,27 @@ Main list styling
 	/*color: white;*/
 	color: #49708f;
 	text-decoration: none;
+	padding: 1px;
+}
+h2.date-header {
+	color: #a5a6a4;
+}
+.favorite-button {
+	font: 10px/10px helvetica, arial, verdana;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	background-color: #fff;
+	/*font-weight: bold;*/
+	border: 1px solid #49708f;
+	color: #49708f;
+	cursor: pointer;
+	padding: 6px 4px 4px 6px;
+	margin-right: 10px;
+}
+.unfavorite-button {
+	@extend .favorite-button;
+	border: 1px solid #a5a6a4;
+	color: #a5a6a4;
 }
 
 
@@ -242,52 +272,116 @@ Show link details styling
 /* -------------------------------------------------
 User profile styling
 ------------------------------------------------- */
-table {
-	width: 80%;
+.stat-header {
+	/*text-align: center;*/
+	/*margin-top: 18px;*/
+	font-weight: bold;
+	/*padding: 5px;*/
+}
+.stat-list-item {
+	font: 16px/22px helvetica, arial, verdana;
+	letter-spacing: 0.1em;
+	padding: 4px 0;
+}
+table.user-profile-table {
+	width: 100%;
+	margin-bottom: 20px;
 	/*margin-right: 25px;*/
 	/*margin: 0 auto;*/
 	/*border: 1px solid blue;*/
+	border-collapse: collapse;
 }
 td {
-	padding: 10px 0;
-}
-.table-row {
-	border-bottom: 2px solid #49708f;
-}
-.user-stat-left {
-	/*width: 60%;*/
-	/*border: 1px solid red;*/
-	padding-left: 20px;
-	/*border-right: 2px solid #e3e3e3;*/
-}
-.user-stat-right {
-	/*width: 20%;*/
-	text-align: right;
-	padding-right: 20px;
-}
-.stat-header {
-	/*text-align: center;*/
-	margin: 10px 0;
-	padding: 5px;
+	padding: 3px 0;
+	margin: auto 0;
 }
 .main-table-left {
-	width: 10%;
-	padding-right: 5px;
+	width: 100%;
+	/*padding-bottom: 1px;*/
+	/*padding-right: 5px;*/
+	border-bottom: 1px solid white;
+}
+.main-table-left-2 {
+	/*width: 70%;*/
+	/*padding-right: 5px;*/
+	/*border-bottom: 1px solid #e3e3e3;*/
+}
+.main-table-middle {
+	/*width: 20%;*/
+	/*padding-left: 5px;*/
+	/*border-bottom: 1px solid #e3e3e3;*/
 }
 .main-table-right {
-	width: 90%;
-	padding-left: 5px;
+	/*width: 10%;*/
+	/*padding-left: 5px;*/
+	/*border: 1px solid red;*/
 }
 .user-link-list {
 	/*padding: 10px 0;*/
 	/*border: 1px solid red;*/
-	line-height: 1.5em;
+	/*line-height: 1.5em;*/
 }
 .user-list-header {
 	border-bottom: 1px solid #49708f;
-	padding: 15px 0 5px 0;
-	margin: 20px 0 10px 0;
+	padding: 5px 0 5px 0;
+	margin: 10px 0 20px 0;
 }
+.user-table-link {
+	font: 16px/22px helvetica, arial, verdana;
+	color: #49708f;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	/*color: black;*/
+	float: left;
+	padding: 3px 0 3px 5px;
+	/*margin-bottom: 5px;*/
+}
+.user-table-edit-link {
+	@extend .user-table-link;
+	color: red;
+}
+.user-table-button {
+	font: 12px/14px helvetica, arial, verdana;
+	/*text-transform: uppercase;*/
+	letter-spacing: 0.1em;
+	background-color: #fff;
+	/*font-weight: bold;*/
+	border: 1px solid black;
+	color: black;
+	cursor: pointer;
+	padding: 6px 4px 4px 6px;
+	margin-bottom: 2px;
+}
+/*table.user-profile-table {
+	border-collapse: separate;
+	border-spacing-bottom: 3px;
+}*/
+/*table.user-profile-table td {
+	border: 1px solid red;
+}*/
+.left-summary-box {
+	float: left;
+	/*width: 50%;*/
+	/*height: 100%;*/
+	/*padding: 10px 0;*/
+	/*text-align: center;*/
+	/*border-right: 5px solid #CAE1FF;*/
+	/*border: 1px solid blue;*/
+}
+.right-summary-box {
+	float: left;
+	margin-top: 15px;
+	margin-left: 10px;
+	/*width: 45%;*/
+	/*padding-left: 20px;*/
+	/*border: 1px solid red;*/
+}
+/*h1.user-heading {
+	border: 1px solid green;
+	padding: 0;
+	margin: 0;
+}*/
+
 
 
 /* -------------------------------------------------
@@ -295,6 +389,7 @@ Job Sidebar styles
 ------------------------------------------------- */
 .job-sidebar-heading {
 	font: 18px/24px helvetica, arial, verdana;
+	/*min-height: 24px;*/
 	letter-spacing: 0.05em;
 	color: white;
 	background-color: orange;
@@ -464,15 +559,15 @@ Tag styling
 ------------------------------------------------- */
 .link-tag {
 	font: 12px/12px helvetica, arial, verdana;
-	color: white;
+	color: #0c65a5;
 	text-transform: uppercase;
 	text-decoration: none;
 	letter-spacing: 0.15em;
-	margin-right: 8px;
-	padding: 6px 4px 4px 4px;
-	background-color: #49708f;
+	margin-left: 5px;
+	padding: 4px 2px 2px 4px;
+	background-color: #A0C5E8;
 	/*background-color: #CAE1FF;  #66CD00*/
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 
 
@@ -480,11 +575,12 @@ Tag styling
 /* -------------------------------------------------
 Specific button styling
 ------------------------------------------------- */
-/*For some reason, this class has "_" not "-" in name */
-.new_favorite, .edit_favorite {
+.new_favorite, .edit_favorite, .new_savedjob, .edit_savedjob, .edit_link {
 	float: right;
-	margin-right: 10px;
 	/*border: 1px solid red;*/
+}
+.new_favorite {
+	margin-right: 10px;
 }
 .new_favorite input {
 	cursor: pointer;
@@ -494,14 +590,7 @@ Specific button styling
 	/*background: #f6f6f6 url(/assets/star1.png) 4px 50% no-repeat;*/
 	/*color: red;*/
 }
-.new_favorite input:hover {
-	/*height: 32px;*/
-	/*width: 32px;*/
-	/*border: 0;*/
-	/*background: #FFD700 url(/assets/star1.png) 4px 50% no-repeat;*/
-	/*cursor: pointer;*/
-	/*color: red;*/
-}
+
 .edit_favorite input {
 	cursor: pointer;
 	/*height: 32px;*/
@@ -571,7 +660,9 @@ Misc Navigation styling
 	padding: 15px 0;
 }
 .small-label {
-	padding-top: 8px;
+	color: #49708f;
+	font: 12px/12px helvetica, arial, verdana;
+	/*padding-top: 8px;*/
 }
 #red-star {
 	color: red;

@@ -1,6 +1,6 @@
 <div class="main-content">
 	<% @grouped_links.each do |date, links| %>
-		<h2><%= date == DateTime.now.to_date ? "Today" : date %></h2>
+		<h2 class="date-header"><%= date == DateTime.now.to_date ? "Today" : date.strftime("%A, %d %B") %></h2>
 		<ul>
 			<% links.each do |link| %>
 				<li>
@@ -30,7 +30,7 @@
 	</div>
 	<% if @tag %>
 		<div class="job-post">
-			Showing GitHub jobs relating to <%= @tag %>
+			Showing GitHub jobs relating to <%= @search_tag %>
 		</div>
 	<% end %>
 	<ol>

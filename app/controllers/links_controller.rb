@@ -7,6 +7,8 @@ class LinksController < ApplicationController
 		# basic search functionality
 		if params[:search]
 			@links = Link.where("title LIKE ?", "%#{params[:search]}%")
+			@tag = params[:search].gsub(' ','+')
+			@search_tag = @tag
 			if @links.empty?
 				flash[:alert] = "Sorry, we couldn't find that resource for you"
 			end
@@ -27,10 +29,11 @@ class LinksController < ApplicationController
 
 		# code to pull github jobs
 		if params[:tag]
-			tag = params[:tag].gsub(' ','+')
-			@tag = Tag.find(tag).name
+			# binding.pry
+			@tag = params[:tag]
+			@search_tag = Tag.find(@tag).name
 		end
-		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{tag}")
+		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{@tag}")
 		result = JSON.parse(response.body)
 
 		@result = []
@@ -45,6 +48,7 @@ class LinksController < ApplicationController
 
 	def show
 		@url = @link.link_url
+		description = @link.tags.first.name
 
 		# try javascript - check ready state, complete, loaded? 
 		# rescu (for future reference)
@@ -55,11 +59,7 @@ class LinksController < ApplicationController
 		browshot_info = HTTParty.get("https://api.browshot.com/api/v1/screenshot/info?id=#{@image_id}&key=#{@key}")
 		@status = JSON.parse(browshot_info.body)["status"]
 
-		# code to pull github jobs
-		if params[:tag]
-			description = params[:tag].gsub(' ','+')
-		end
-		
+		# code to pull github jobs		
 		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{description}")
 		result = JSON.parse(response.body)
 

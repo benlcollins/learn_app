@@ -1,7 +1,7 @@
 <!-- if user not signed in, display fake "Favorite" button against all links -->
 <% if !user_signed_in? %>
 	<%= form_for @favorite do |f| %>
-		<%= f.submit "Favorite" %>
+		<%= f.submit "Favorite", :class => "favorite-button" %>
 	<% end %>
 
 <!-- otherwise, user is logged in, so need to determine if this link is favorite or not -->
@@ -12,12 +12,12 @@
 
 	<!-- Is there a better way of doing the next line? i.e. selecting the current link as the users favorite -->
 		<%= form_for current_user.favorites.find_by(:link_id => link.id), :method => :delete do |f| %>
-			<%= f.submit "Unfavorite" %>
+			<%= f.submit "Unfavorite", :class => "unfavorite-button" %>
 		<% end %>
 	<% else %>
 		<%= form_for @favorite do |f| %>
 			<%= hidden_field_tag :link_id, link.id %>
-			<%= f.submit "Favorite" %>
+			<%= f.submit "Favorite", :class => "favorite-button" %>
 		<% end %>
 	<% end %>
 

@@ -1,27 +1,15 @@
 <div class="group summary-bar">
 	<div class="left-summary-box">
-		<h1>Welcome, <%= @user.username %></h1>
+		
 		<img class="avatar" src="<%= @image_src %>">
-		<div class="small-label">No image? <br />Get one <a href="http://en.gravatar.com/" target="_blank">here</a></div>
-		<div class="small-label"><%= link_to "Change password", edit_user_registration_path %></div>
+		
+		
 	</div>
 	
 	<div class="right-summary-box">
-		<h2 class="stat-header">At a glance:</h2>
-		<table>
-			<tr class="table-row">
-				<td class="user-stat-left">Your favorited resources:</td>
-				<td class="user-stat-right"><%= @favorites.count %></td>
-			</tr>
-			<tr class="table-row">
-				<td class="user-stat-left">Your saved jobs:</td>
-				<td class="user-stat-right"><%= @savedjobs.count %></td>
-			</tr>
-			<tr>
-				<td class="user-stat-left">Links you've submitted:</td>
-				<td class="user-stat-right"><%= @links.count %></td>
-			</tr>
-		</table>
+		<h1 class="user-heading">Welcome, <%= @user.username %></h1>
+		<a href="http://en.gravatar.com/" target="_blank" class="small-label">No image?</a><br />
+		<%= link_to "Change password", edit_user_registration_path, :class => "small-label" %>
 	</div>
 </div>
 
@@ -29,48 +17,47 @@
 	<div class="center-content">
 
 	<!-- User favorites display -->
-	<h2 class="user-list-header">Your Favorites:</h2>
-	<% if @favorites.empty? %>
-		<p>You currently have no favorites!</p>
-	<% else %>
-		<table>
-			<% @favorites.each do |fav| %>
-				<tr>
-					<td class="main-table-left"><%= render partial: 'delete_favorite_button', locals: {fav: fav} %></td>
-					<td class="main-table-right"><%= link_to fav.title, link_path(fav.link_id) %></td>
-				</tr>
-			<% end %>
-		</table>
-	<% end %>
+	<h2 class="user-list-header">
+		You have <%= @favorites.empty? ? "not favorited anything yet!" : @favorites.count.to_s + " Favorites:"%>
+	</h2>
+
+	<table class="user-profile-table">
+		<% @favorites.each do |fav| %>
+			<tr>
+				<td><%= link_to fav.title, link_path(fav.link_id), :class => "main-table-left user-table-link" %></td>
+				<td><%= render partial: 'delete_favorite_button', locals: {fav: fav} %></td>
+			</tr>
+		<% end %>
+	</table>
 
 	<!-- User favorites display -->
-	<h2 class="user-list-header">Your Saved Jobs:</h2>
+	<h2 class="user-list-header">
+		You have <%= @savedjobs.empty? ? "no saved jobs yet!" : @savedjobs.count.to_s + " Saved Jobs:"%>
+	</h2>
 
-	<% if @savedjobs.empty? %>
-		<p>You currently have no saved jobs!</p>
-	<% else %>
-		<table>
-			<% @savedjobs.each do |fav| %>
-				<tr>
-					<td class="main-table-left"><%= render partial: 'delete_savedjob_button', locals: {fav: fav} %></td>
-					<td class="main-table-right"><%= link_to fav.title, job_path(fav.job_id) %></td>
-				</tr>
-			<% end %>
-		</table>
-	<% end %>
+	<table class="user-profile-table">
+		<% @savedjobs.each do |fav| %>
+			<tr>
+				<td><%= link_to fav.title, job_path(fav.job_id), :class => "main-table-left user-table-link" %></td>
+				<td><%= render partial: 'delete_savedjob_button', locals: {fav: fav} %></td>
+			</tr>
+		<% end %>
+	</table>
 
+	<!-- User submitted links display -->
+	<h2 class="user-list-header">
+		You have <%= @savedjobs.empty? ? "not submitted any Resources yet!" : "submitted " + @links.count.to_s + " Resources:"%>
+	</h2>
 
-	<h2 class="user-list-header">Links you've submitted:</h2>
-
-	<% if @links.empty? %>
-			<p>You have not posted any links yet!</p>
-	<% else %>
-		<ul>
-			<% @links.each do |link| %>
-				<li><%= link_to link.title, link_path(link.id), :class => "user-link-list" %></li>
-			<% end %>
-		</ul>
-	<% end %>
+	<table class="user-profile-table">
+		<% @links.each do |link| %>
+			<tr>
+				<td><%= link_to link.title, link_path(link.id), :class => "main-table-left user-table-link" %></td>
+				<td><%= link_to "Edit", edit_link_path(link.id), :class => "main-table-left user-table-edit-link" %></td>
+				<td><%= render partial: 'delete_link_button', locals: {link: link} %></td>
+			</tr>
+		<% end %>
+	</table>
 
 	</div>
 </div>

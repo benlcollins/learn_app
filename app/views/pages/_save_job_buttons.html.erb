@@ -5,10 +5,10 @@
 	<%= form_for @savedjob do |f| %>
 		<%= hidden_field_tag :job_id, @result["id"] %>
 		<%= hidden_field_tag :title, @result["title"] %>
-		<%= f.submit "Save for later" %>
+		<%= f.submit "Save Job", :class => "favorite-button" %>
 	<% end %>
 <% else %>
 	<%= form_for @savedjob, :method => :delete do |f| %>
-		<% f.submit "Remove from favorites" %>
+		<% f.submit "Remove from favorites", :class => "favorite-button" %>
 	<% end %>
 <% end %>

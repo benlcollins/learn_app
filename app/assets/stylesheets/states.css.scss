@@ -22,24 +22,61 @@ a.header-navigation-link:hover {
 }
 a.footer-navigation-link:hover {
 	/*text-decoration: underline;*/
-	border-bottom: 2px solid white;
+	color: orange;
+	border-bottom: 2px solid orange;
 }
 a.link-title:hover {
-	text-decoration: underline;
+	/*text-decoration: underline;*/
+	background-color: #ffe4b2;
+	color: orange;
+	padding-bottom: 1px;
+	border-bottom: 2px solid orange;
 }
 a.link-tag:hover {
+	color: white;
 	background-color: orange;
 }
 a.user-actions-link:hover {
-	color: orange;
-	text-decoration: underline;
+	/*color: orange;*/
+	/*text-decoration: underline;*/
+	border-bottom: 2px solid orange;
+
 }
 a.link-meta-submitter:hover {
 	color: orange;
-	text-decoration: underline;
+	/*text-decoration: underline;*/
+	border-bottom: 2px solid orange;
 }
 a.job-post-link:hover {
 	color: orange;
 	text-decoration: underline;
 }
-/*.logo_position a:hover .logo_letter */
+a.user-table-link:hover {
+	/*text-decoration: underline;*/
+	/*background-color: #ffe4b2;*/
+	color: orange;
+	padding-bottom: 2px;
+	border-bottom: 2px solid orange;
+}
+a.user-table-edit-link:hover {
+	padding-bottom: 2px;
+	border-bottom: 2px solid red;
+}
+input.user-table-button:hover {
+	color: red;
+	background-color: #ffb2b2;
+	border-color: red;
+}
+input.search-button:hover {
+	background-color: white;
+	color: black;
+}
+input.favorite-button:hover, input.unfavorite-button:hover {
+	background-color: #ffe4b2;
+	color: orange;
+	/*padding-bottom: 1px;*/
+	border: 1px solid orange;
+}
+
+
+

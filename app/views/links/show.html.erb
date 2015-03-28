@@ -26,29 +26,21 @@
 	<p class="link-details">Published in <%= @link.year %></p>
 	<p class="link-details">Posted on <%= @link.created_at.getlocal.to_date %> by <%= link_to @link.user[:username], user_path(@link.user[:id]) %></p>
 
-	<% if @link.user == current_user %>
-
-		<!-- link to edit the submission -->
-		<%= link_to "Edit this submission", edit_link_path(@link.id) %>
-
-		<!-- button to delete the link -->
-		<%= form_for @link, :method => :delete do |f| %>
-			<%= f.submit "Delete link" %>
-		<% end %>
-
-	<% end %>
 </div>
 
 <div class="sidebar">
-	<div class="job-sidebar-heading"><h3>Jobs - powered by <a href="https://github.com/" target="_blank">GitHub</a></h3></div>
+	<div class="job-sidebar-heading group"><h3>Jobs from </h3><a href="https://github.com/" target="_blank">
+		<img class="github-logo" src="/assets/github/GitHub_Logo.png" alt="GitHub">
+		<img class="github-logo" src="/assets/github/GitHub-Mark-32px.png"></a>
+	</div>
 	<ol>
 	 	<% @result.each do |r| %>
 	 		<div class="job-post">
 		 		<li>
-		 			<%= link_to r["title"], job_path(r["id"]) %><br />
-		 			<%= r["location"] %><br />
-		 			<%= r["company"] %><br />
-		 			<%= r["type"] %><br />
+		 			<%= link_to r["title"], job_path(r["id"]), :class => "job-post-link" %><br />
+		 			<%= link_to r["location"], job_path(r["id"]) %><br />
+		 			<%= link_to r["company"], job_path(r["id"]) %><br />
+		 			<%= link_to r["type"], job_path(r["id"]) %><br />
 		 		</li>
 		 	</div>
 	 	<% end %>

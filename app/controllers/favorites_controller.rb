@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
 		favorite = Favorite.new(:link_id => link, :user_id => user, :title => title)
 		favorite.save
 
-		flash[:notice] = "Resource successfully added to your profile"
+		flash[:notice] = "Resource successfully added to your favorites"
 
 		redirect_to request.referrer
 	end
@@ -19,7 +19,7 @@ class FavoritesController < ApplicationController
 	def destroy
 		favorite = Favorite.find(params[:id])
 		favorite.destroy
-		flash[:alert] = "Resource successfully removed from your profile"
+		flash[:alert] = "Resource removed from your favorites"
 		redirect_to request.referrer
 	end
 
