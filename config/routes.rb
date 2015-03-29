@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :favorites, only: [:index, :create, :destroy]
   resources :savedjobs, only: [:index, :create, :destroy]
+  resources :upvotes, only: [:index, :create, :destroy]
   get '/about' => 'pages#about'
   get 'tags/:tag' => 'links#index', as: :tag
   get 'jobs/:id' => 'pages#show_jobs', as: :job

@@ -21,11 +21,13 @@ class LinksController < ApplicationController
 		# group all of the links into date groups
 		@grouped_links = @links.order("created_at").reverse.group_by { |link| link.created_at.getlocal.to_date }
 		
-		# if user is signed in, pass all their favorites into @favorite instance variable
+		# if user is signed in, pass all their favorites/upvotes into @favorites/@upvotes instance variables
 		if user_signed_in?
 			user_favorites
+			user_upvotes
 		end
 		@favorite = Favorite.new
+		@upvote = Upvote.new
 
 		# code to pull github jobs
 		if params[:tag]
@@ -58,6 +60,13 @@ class LinksController < ApplicationController
 		@image_id = @link.browshot_id
 		browshot_info = HTTParty.get("https://api.browshot.com/api/v1/screenshot/info?id=#{@image_id}&key=#{@key}")
 		@status = JSON.parse(browshot_info.body)["status"]
+
+		if user_signed_in?
+			user_favorites
+			user_upvotes
+		end
+		@favorite = Favorite.new
+		@upvote = Upvote.new
 
 		# code to pull github jobs		
 		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{description}")
@@ -136,6 +145,12 @@ class LinksController < ApplicationController
 	def user_favorites
 		@favorites = current_user.favorites.map do |fav|
 			fav.link_id
+		end
+	end
+
+	def user_upvotes
+		@upvotes = current_user.upvotes.map do |vote|
+			vote.link_id
 		end
 	end
 

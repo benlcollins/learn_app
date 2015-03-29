@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
 	has_many :links
 	has_many :favorites, dependent: :destroy
+	has_many :upvotes, dependent: :destroy
 	has_many :savedjobs
 
 	# Include default devise modules. Others available are:

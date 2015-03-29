@@ -2,6 +2,7 @@ class Link < ActiveRecord::Base
 
 	belongs_to :user
 	has_many :favorites, dependent: :destroy
+	has_many :upvotes, dependent: :destroy
 
 	has_many :taggings, dependent: :destroy
 	has_many :tags, through: :taggings, dependent: :destroy

@@ -4,11 +4,21 @@
 		<%= link_to "Home", links_path %> / Resource details
 	</p>
 
-	<h1 class="link-detail-title"><%= @link.title %></h1>
-
-	<p class="link-details">Posted by <%= link_to @link.user[:username], user_path(@link.user[:id]), :class => "link-meta-submitter" %>
-		on <%= @link.created_at.getlocal.to_date.strftime("%A, %d %B") %></p>
+	<div class="show-left-box">
+		<%= render partial: 'upvote_buttons', locals: {link: @link} %>
+	</div>
 	
+	<div class="show-middle-box">
+		<h1 class="link-detail-title"><%= @link.title %></h1>
+
+		<p class="link-details">Posted by <%= link_to @link.user[:username], user_path(@link.user[:id]), :class => "link-meta-submitter" %>
+			on <%= @link.created_at.getlocal.to_date.strftime("%A, %d %B") %></p>
+	</div>
+
+	<div class="show-right-box">
+		<%= render partial: 'favorite_buttons', locals: {link: @link} %>
+	</div><br />
+
 	<!-- Check if status of screenshot is finished, display api info if not  -->
 	<% if !@status == "finished" %>
 		<p class="link-details">Screenshot status: <%= @status %></p>
@@ -18,7 +28,7 @@
 	<a href="<%= @link.link_url %>" target="_blank">
 		<img src="https://www.browshot.com/screenshot/image/<%= @image_id %>?scale=1&key=<%= @key %>" width="500" alt=
 		"Tutorial screenshot not ready yet. Be patient, they sometimes take a while to arrive." 
-		class="screenshot-image"><br />
+		class="group screenshot-image"><br />
 	</a>
 
 	<p class="link-details">

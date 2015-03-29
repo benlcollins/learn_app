@@ -3,7 +3,11 @@
 		<h2 class="date-header"><%= date == DateTime.now.to_date ? "Today" : date.strftime("%A, %d %B") %></h2>
 		<ul>
 			<% links.each do |link| %>
-				<li>
+				<li class="group">
+					<div class="upvote-box">
+						<%= render partial: 'upvote_buttons', locals: {link: link} %>
+					</div>
+
 					<div class="link-bar-1">
 						<%= link_to link.title, link_path(link.id), :class => "group link-title" %>
 						<%= render partial: 'favorite_buttons', locals: {link: link} %>

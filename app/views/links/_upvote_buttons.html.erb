@@ -1,0 +1,27 @@
+<!-- if user not signed in, display fake "upvote" button against all links -->
+<% if !user_signed_in? %>
+	<%= form_for @upvote do |f| %>
+		<%= f.submit "+", :class => "upvote-button" %>
+	<% end %>
+	<div class="upvote-count"><%= link.upvotes.count %></div>
+
+<!-- otherwise, user is logged in, so need to determine if this link is upvote or not -->
+<!-- instance variable @upvotes is an array containing all of current user's upvotes -->
+<!-- so need to see if current link.id is contained in the link_id's within this array -->
+<% else %>
+	<% if @upvotes.include?(link.id) %>
+
+	<!-- Is there a better way of doing the next line? i.e. selecting the current link as the users upvote -->
+		<%= form_for current_user.upvotes.find_by(:link_id => link.id), :method => :delete do |f| %>
+			<%= f.submit "-", :class => "downvote-button" %>
+		<% end %>
+		<div class="downvote-count"><%= link.upvotes.count %></div>
+	<% else %>
+		<%= form_for @upvote do |f| %>
+			<%= hidden_field_tag :link_id, link.id %>
+			<%= f.submit "+", :class => "upvote-button" %>
+		<% end %>
+		<div class="upvote-count"><%= link.upvotes.count %></div>
+	<% end %>
+
+<% end %>

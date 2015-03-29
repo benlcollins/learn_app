@@ -44,7 +44,7 @@ Header styles - Row 1
 	font-weight: 300;
 	text-decoration: none;
 	/*font-weight: bold;*/
-	background-color: #3a3a3a;
+	background-color: #fba827;
 	color: #fff;
 	/*font: 24px/32px "Fredoka One", Helvetica, Arial, sans-serif;*/
 	height: 2.2em;
@@ -53,7 +53,7 @@ Header styles - Row 1
 	padding: 2px 0 0 2px;
 	border: 3px solid #fff;
 	border-radius: 50%;
-	box-shadow: 0px 0px 0px 0.14em #3a3a3a;
+	box-shadow: 0px 0px 0px 0.14em #fba827;
 }
 .user-actions {
 	float: right;
@@ -212,11 +212,15 @@ Main list styling
 	border-radius: 5px;
 }
 .link-bar-1 {
-	/*border-left: 1px solid #49708f;*/
+	float: right;
+	width: 95%;
+	/*border: 1px solid red;*/
 	padding: 10px 0 5px 15px;
 }
 .link-bar-2 {
-	/*border-left: 1px solid #49708f;*/
+	float: right;
+	width: 95%;
+	/*border: 1px solid red;*/
 	padding: 5px 0 10px 15px;
 }
 .link-title {
@@ -266,6 +270,57 @@ h2.date-header {
 	@extend .favorite-button;
 	border: 1px solid #a5a6a4;
 	color: #a5a6a4;
+}
+.upvote-box {
+	float: left;
+	width: 5%;
+	/*height: 50%;*/
+	text-align: center;
+	padding: 20px 0 0 10px;
+	background-color: #f9f9f9;
+	/*height: 100%;*/
+	/*border: 1px solid #49708f;*/
+}
+.upvote-button {
+	/*margin-bottom: 3px;*/
+	width: 24px;
+	height: 24px;
+	border: 0;
+	background: url("vote_buttons/up.png") no-repeat 0 0;
+	cursor: pointer;
+}
+.downvote-button {
+	width: 24px;
+	height: 24px;
+	border: 0;
+	/*background-color: #f9f9f9;*/
+	background: url("vote_buttons/up.png") no-repeat 0 3px;
+	cursor: pointer;
+	/*padding-bottom: -4px;*/
+	border-bottom: 3px solid orange;
+}
+.upvote-count {
+	font: 28px/28px "raleway", helvetica, arial, verdana;
+	font-weight: 600;
+}
+.downvote-count {
+	@extend .upvote-count;
+	color: orange;
+}
+.show-left-box {
+	float: left;
+	text-align: center;
+	/*border: 1px solid #49708f;*/
+}
+.show-middle-box {
+	float: left;
+	padding-left: 10px;
+	/*border: 1px solid #49708f;*/
+}
+.show-right-box {
+	float: left;
+	padding-left: 20px;
+	/*border: 1px solid #49708f;*/
 }
 
 
@@ -635,7 +690,7 @@ Tag styling
 	letter-spacing: 0.15em;
 	margin-left: 5px;
 	padding: 4px 2px 2px 4px;
-	background-color: #b5e0ea;
+	background-color: #ceeaf1;
 	/*background-color: #CAE1FF;  #66CD00*/
 	/*border-radius: 5px;*/
 }
