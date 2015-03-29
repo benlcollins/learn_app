@@ -226,6 +226,7 @@ Main list styling
 .link-title {
 	font: 22px/24px "raleway", helvetica, arial, verdana;
 	font-weight: 300;
+	max-width: 75%;
 	letter-spacing: 0.1em;
 	text-decoration: none;
 	color: black;
@@ -314,6 +315,7 @@ h2.date-header {
 }
 .show-middle-box {
 	float: left;
+	max-width: 75%;
 	padding-left: 10px;
 	/*border: 1px solid #49708f;*/
 }

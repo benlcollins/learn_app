@@ -119,7 +119,7 @@ class LinksController < ApplicationController
 		@link.year = year
 		if @link.update(strong_upload_params)
 			flash[:notice] = "Link updated successfully"
-			redirect_to links_path
+			redirect_to link_path(@link)
 		else
 			flash[:alert] = "Link not updated"
 			render :edit
