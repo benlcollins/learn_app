@@ -7,7 +7,7 @@ Modules Styles
 Typography
 ------------------------------------------------- */
 h1 {
-	font: 24px/36px helvetica, arial, verdana;
+	font: 22px/36px helvetica, arial, verdana;
 	letter-spacing: 0.1em;
 }
 h2 {
@@ -27,29 +27,33 @@ Header styles - Row 1
 }
 .logo {
 	float: left;
+	font-family: "raleway";
+	font-weight: 300;
 	/*text-transform: uppercase;*/
 	/*padding: 15px 0 15px 35px;*/
 	color: #fff;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	text-decoration: none;
 	/*border: 1px solid red !important;*/
-	padding: 9px 0 0 4px;
-	margin-left: 3px;
+	padding: 5px 0 0 4px;
+	/*margin-left: 1px;*/
 }
 .logo-letter {
 	float: left;
+	font-family: "raleway";
+	font-weight: 300;
 	text-decoration: none;
-	font-weight: bold;
-	background-color: #08699D;
+	/*font-weight: bold;*/
+	background-color: #3a3a3a;
 	color: #fff;
 	/*font: 24px/32px "Fredoka One", Helvetica, Arial, sans-serif;*/
-	height: 2em;
-	width: 2em;
+	height: 2.2em;
+	width: 2.2em;
 	text-align: center;
-	padding: 5px 0 0 2px;
+	padding: 2px 0 0 2px;
 	border: 3px solid #fff;
 	border-radius: 50%;
-	box-shadow: 0px 0px 0px 0.14em #08699D;
+	box-shadow: 0px 0px 0px 0.14em #3a3a3a;
 }
 .user-actions {
 	float: right;
@@ -68,7 +72,7 @@ Header styles - Row 1
 .user-actions-link {
 	font-weight: bold;
 	/*color: white;*/
-	color: orange;
+	color: #fba827;
 	text-decoration: none;
 	padding-bottom: 2px;
 }
@@ -80,15 +84,19 @@ Header styles - Row 2
 	float: left;
 	margin-left: 6px;
 	color: #fff;
+	font-family: "raleway";
+	font-weight: 300;
 	/*font: 14px/24px helvetica, arial, verdana;*/
-	/*padding-top: 10px;*/
+	margin-top: 6px;
 	/*border: 1px solid red !important;*/
 }
 .search {
 	width: 50%;
 	/*float: left;*/
-	/*margin: 0 auto;*/
-	margin-left: 10%;
+	/*margin-left: auto;*/
+	/*margin-right: auto;*/
+	margin-left: 8%;
+	margin-top: -10px;
 	display: inline-block;
 	/*border: 1px solid red;*/
 }
@@ -115,7 +123,7 @@ Header styles - Row 2
 .search-button {
 	font: 14px/16px helvetica, arial, verdana;
 	text-transform: uppercase;
-	width: 18%;
+	width: 20%;
 	/*margin-left: 0px !important;*/
 	/*padding-left: 0px !important;*/
 	border: 2px solid white;
@@ -134,7 +142,7 @@ Header styles - Row 2
 }
 .header-navigation {
 	margin-right: 25px;
-	margin-top: 5px;
+	/*margin-top: -2px;*/
 	float: right;
 	/*float: left;*/
 	display: inline-block;
@@ -149,7 +157,8 @@ Header styles - Row 2
 }
 .header-navigation-link {
 	text-transform: uppercase;
-	font: 14px/16px helvetica, arial, verdana;
+	font: 14px/16px "lato", helvetica, arial, verdana;
+	font-weight: 400px;
 }
 .header-navigation a {
 	color: #fff;
@@ -176,7 +185,8 @@ Footer styles
 }
 .footer-navigation-link {
 	text-transform: uppercase;
-	font: 14px/16px helvetica, arial, verdana;
+	font: 14px/16px "lato", helvetica, arial, verdana;
+	font-weight: 400px;
 }
 .footer-navigation a {
 	color: #49708f;
@@ -210,7 +220,8 @@ Main list styling
 	padding: 5px 0 10px 15px;
 }
 .link-title {
-	font: 22px/24px helvetica, arial, verdana;
+	font: 22px/24px "raleway", helvetica, arial, verdana;
+	font-weight: 300;
 	letter-spacing: 0.1em;
 	text-decoration: none;
 	color: black;
@@ -221,7 +232,8 @@ Main list styling
 	/*font-style: bold;*/
 }
 .link-meta {
-	font: 14px/16px helvetica, arial, verdana;
+	font: 14px/16px "merriweather", helvetica, arial, verdana;
+	font-weight: 400;
 	padding: 3px 0 5px 5px;
 	float: left;
 	/*border: 1px solid blue;*/
@@ -235,6 +247,8 @@ Main list styling
 }
 h2.date-header {
 	color: #a5a6a4;
+	font-family: "raleway";
+	font-weight: 300;
 }
 .favorite-button {
 	font: 10px/10px helvetica, arial, verdana;
@@ -265,9 +279,14 @@ Show link details styling
 	text-align: center;
 	border-radius: 5px;
 }
+h1.link-detail-title {
+	font: 22px/24px "raleway", helvetica, arial, verdana;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
 .link-details {
 	/*padding: 10px 0;*/
-	font: 16px/24px helvetica, arial, verdana;
+	font: 16px/24px "merriweather", helvetica, arial, verdana;
 	letter-spacing: 0.05em;
 	padding: 2px 10px 12px 10px;
 	margin-right: 25px;
@@ -285,13 +304,13 @@ User profile styling
 .stat-header {
 	/*text-align: center;*/
 	/*margin-top: 18px;*/
-	font-weight: bold;
+	/*font-weight: bold;*/
 	/*padding: 5px;*/
 }
 .stat-list-item {
-	font: 16px/22px helvetica, arial, verdana;
-	letter-spacing: 0.1em;
-	padding: 4px 0;
+	/*font: 16px/22px helvetica, arial, verdana;*/
+	/*letter-spacing: 0.1em;*/
+	/*padding: 4px 0;*/
 }
 table.user-profile-table {
 	width: 100%;
@@ -332,13 +351,15 @@ td {
 	/*line-height: 1.5em;*/
 }
 .user-list-header {
-	border-bottom: 1px solid #49708f;
+	font-family: "raleway";
+	font-weight: 300;
+	border-bottom: 1px solid #3a3a3a;
 	padding: 5px 0 5px 0;
 	margin: 10px 0 20px 0;
 }
 .user-table-link {
-	font: 16px/22px helvetica, arial, verdana;
-	color: #49708f;
+	font: 16px/22px "merriweather", helvetica, arial, verdana;
+	color: #3a3a3a;
 	letter-spacing: 0.1em;
 	text-decoration: none;
 	/*color: black;*/
@@ -381,16 +402,18 @@ td {
 .right-summary-box {
 	float: left;
 	margin-top: 15px;
-	margin-left: 10px;
+	margin-left: 20px;
 	/*width: 45%;*/
 	/*padding-left: 20px;*/
 	/*border: 1px solid red;*/
 }
-/*h1.user-heading {
-	border: 1px solid green;
+h1.user-heading {
+	font-family: "raleway";
+	font-weight: 400;
+	/*border: 1px solid green;*/
 	padding: 0;
-	margin: 0;
-}*/
+	/*margin-left: 10px;*/
+}
 
 
 
@@ -398,11 +421,12 @@ td {
 Job Sidebar styles
 ------------------------------------------------- */
 .job-sidebar-heading {
-	font: 18px/24px helvetica, arial, verdana;
+	font: 18px/24px "raleway", helvetica, arial, verdana;
+	font-weight: 400;
 	/*min-height: 24px;*/
 	letter-spacing: 0.05em;
 	color: white;
-	background-color: orange;
+	background-color: #fba827;
 	padding: 15px 10px;
 }
 .job-sidebar-heading h3 {
@@ -412,20 +436,27 @@ Job Sidebar styles
 	/*list-style-type: decimal;*/
 }
 .job-post {
-	font: 14px/16px helvetica, arial, verdana;
+	font: 14px/20px "merriweather", helvetica, arial, verdana;
 	padding: 8px 15px;
 }
 .job-content h1 {
 	padding-top: 10px;
+	font: 22px/24px "raleway", helvetica, arial, verdana;
+	font-weight: 300;
 }
 .job-content h2 {
 	padding: 10px 0;
+	font-family: "raleway";
+	font-weight: 300;
 }
 .job-content h3 {
-	padding: 10px 0;	
+	padding: 10px 0;
+	font-family: "raleway";
+	font-weight: 300;	
 }
 .job-content p {
 	font: 14px/18px helvetica, arial, verdana;
+	/*font-weight: 400;*/
 	padding: 2px 0 8px 10px;
 }
 .job-content li {
@@ -436,8 +467,8 @@ Job Sidebar styles
 	color: black;
 	text-decoration: none;
 }
-.job-post-link {
-	color: #49708f !important;
+a.job-post-link {
+	color: #49708f;
 	font-weight: bold;
 	/*color: white;*/
 	text-decoration: none;
@@ -453,12 +484,19 @@ About page styling
 	margin: 50px auto;
 }
 .about-page h1 {
-	font-weight: bold;
+	font-family: "raleway";
+	font-weight: 300;
 	padding: 10px 0;
 }
 .about-page h2 {
-	padding: 10px 0;
-	text-decoration: underline;
+	padding: 3px 0;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	font-family: "raleway";
+	font-weight: 300;
+	/*text-decoration: underline;*/
+	width: 100%;
+	border-bottom: 1px solid #3a3a3a;
 }
 .about-page h3 {
 	padding: 10px 0;
@@ -466,7 +504,7 @@ About page styling
 	font-style: italic;
 }
 .about-page p {
-	font: 16px/24px helvetica, arial, verdana;
+	font: 16px/24px "lato", helvetica, arial, verdana;
 	letter-spacing: 0.05em;
 	padding: 2px 0 12px 10px;
 }
@@ -477,13 +515,13 @@ About page styling
 	list-style-type: decimal;
 }
 .about-page li {
-	font: 16px/24px helvetica, arial, verdana;
+	font: 16px/24px "lato", helvetica, arial, verdana;
 	padding: 3px;
 	margin-left: 40px;
 }
 .about-page a {
-	font: 16px/22px helvetica, arial, verdana;
-	color: orange;
+	font: 16px/22px "lato", helvetica, arial, verdana;
+	color: #fba827;
 	letter-spacing: 0.1em;
 	text-decoration: none;
 	font-weight: bold;
@@ -597,7 +635,7 @@ Tag styling
 	letter-spacing: 0.15em;
 	margin-left: 5px;
 	padding: 4px 2px 2px 4px;
-	background-color: #A0C5E8;
+	background-color: #b5e0ea;
 	/*background-color: #CAE1FF;  #66CD00*/
 	/*border-radius: 5px;*/
 }
@@ -698,7 +736,7 @@ Misc Navigation styling
 }
 .small-label {
 	color: #49708f;
-	font: 12px/12px helvetica, arial, verdana;
+	font: 12px/12px "merriweather", helvetica, arial, verdana;
 	/*padding-top: 8px;*/
 }
 #red-star {

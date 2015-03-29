@@ -3,6 +3,9 @@
 <head>
   <title>Uplearn</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lato:100,300,400' %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Raleway:400,300,600' %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -29,7 +32,7 @@
 				<% else %>
 				<li>
 					<div class="user-actions-words">
-						New user? <%= link_to "Sign up", new_user_registration_path, :class => "user-actions-link" %> / 
+						New user? <%= link_to "Register", new_user_registration_path, :class => "user-actions-link" %> / 
 						<%= link_to "Sign in", new_user_session_path, :class => "user-actions-link" %>
 					</div>
 				</li>
@@ -53,7 +56,7 @@
 			</div>
 			<div class="header-navigation">
 				<li>
-					<%= link_to "Add New Resource", new_link_path, :class => "header-navigation-link" %>
+					<%= link_to "Add Link", new_link_path, :class => "header-navigation-link" %>
 				</li>
 				<li>
 					<%= link_to "About", about_path, :class => "header-navigation-link" %>

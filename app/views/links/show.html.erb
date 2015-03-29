@@ -4,14 +4,14 @@
 		<%= link_to "Home", links_path %> / Resource details
 	</p>
 
-	<h1><%= @link.title %></h1>
+	<h1 class="link-detail-title"><%= @link.title %></h1>
 
-	<p>Posted by <%= link_to @link.user[:username], user_path(@link.user[:id]), :class => "link-meta-submitter" %>
+	<p class="link-details">Posted by <%= link_to @link.user[:username], user_path(@link.user[:id]), :class => "link-meta-submitter" %>
 		on <%= @link.created_at.getlocal.to_date.strftime("%A, %d %B") %></p>
 	
 	<!-- Check if status of screenshot is finished, display api info if not  -->
 	<% if !@status == "finished" %>
-		<p>Screenshot status: <%= @status %></p>
+		<p class="link-details">Screenshot status: <%= @status %></p>
 	<% end %>
 	
 	<!-- Display screenshot and make it a clickable link -->

@@ -2,7 +2,8 @@
 Layout Styles
 ------------------------------------------------- */
 header {
-	background-color: #3A3A3A;
+	/*background-color: #3A3A3A;*/
+	background-color: #0b99bc;
 	/*background-color: #49708f;*/
 	/*background: -webkit-linear-gradient(#fff, #49708f);*/
 	/*background: -moz-linear-gradient(#fff, #49708f);*/
@@ -19,7 +20,7 @@ header {
 }
 .header-row-2 {
 	/*border: 1px solid blue;*/
-	padding: 10px 10px 20px 10px;
+	padding: 0px 10px 15px 10px;
 }
 .container-large {
 	width: 85%;
@@ -60,7 +61,7 @@ footer {
 	width: 30%;
 	float: right;
 	margin: 49px 0 30px 0;
-	border: 5px solid orange;
+	border: 5px solid #fba827;
 	border-radius: 15px;
 }
 .single-col-content {

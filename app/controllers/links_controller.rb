@@ -30,8 +30,8 @@ class LinksController < ApplicationController
 		# code to pull github jobs
 		if params[:tag]
 			# binding.pry
-			@tag = params[:tag]
-			@search_tag = Tag.find(@tag).name
+			@tag = params[:tag].gsub(' ','+')
+			@search_tag = Tag.find(params[:tag]).name
 		end
 		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{@tag}")
 		result = JSON.parse(response.body)
@@ -48,7 +48,7 @@ class LinksController < ApplicationController
 
 	def show
 		@url = @link.link_url
-		description = @link.tags.first.name
+		description = @link.tags.first.name.gsub(' ','+')
 
 		# try javascript - check ready state, complete, loaded? 
 		# rescu (for future reference)
