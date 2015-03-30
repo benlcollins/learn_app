@@ -478,16 +478,19 @@ h1.user-heading {
 Job Sidebar styles
 ------------------------------------------------- */
 .job-sidebar-heading {
-	font: 18px/24px "raleway", helvetica, arial, verdana;
-	font-weight: 400;
-	/*min-height: 24px;*/
-	letter-spacing: 0.05em;
-	color: white;
 	background-color: #fba827;
 	padding: 15px 10px;
+	/*text-align: center;*/
+	/*border: 1px solid red;*/
 }
 .job-sidebar-heading h3 {
+	font: 18px/24px "raleway", helvetica, arial, verdana;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+	color: white;
 	float: left;
+	padding-right: 3px;
+	margin-left: 18%; 
 }
 .sidebar ol {
 	/*list-style-type: decimal;*/
@@ -803,6 +806,7 @@ Misc Navigation styling
 	/*width: 100%;*/
 	height: 24px;
 	border: 0;
+	display: inline-block;
 	float: left;
 }
 

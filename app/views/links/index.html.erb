@@ -28,9 +28,12 @@
 </div>
 
 <div class="sidebar">
-	<div class="job-sidebar-heading group"><h3>Jobs from </h3><a href="https://github.com/" target="_blank">
-		<%= image_tag("github/GitHub_Logo.png", alt: "GitHub", class: "github-logo") %>
-		<%= image_tag("github/GitHub-Mark-32px.png", alt: "GitHub", class: "github-logo") %></a>
+	<div class="job-sidebar-heading group">
+		<h3>Jobs from </h3><!-- 
+		--><a href="https://github.com/" target="_blank">
+			<%= image_tag("github/GitHub_Logo.png", alt: "GitHub", class: "github-logo") %>
+			<%= image_tag("github/GitHub-Mark-32px.png", alt: "GitHub", class: "github-logo") %>
+		</a>
 	</div>
 	<% if @tag %>
 		<div class="job-post">

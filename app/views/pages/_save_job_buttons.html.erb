@@ -1,11 +1,11 @@
-<!-- user is not logged in, so always show favorite button (requires login to use though) -->
 <% if !user_signed_in? %>
+<!-- user is not logged in, so always show favorite button (requires login to use though) -->
 	<%= form_for @savedjob do |f| %>
 		<%= f.submit "Save Job", :class => "favorite-button" %>
 	<% end %>
 
-<!-- user is logged in, so need to determine if this job is already saved or not -->
 <% else %>
+<!-- user is logged in, so need to determine if this job is already saved or not -->
 	<% if @savedjob.new_record? %>
 		<%= form_for @savedjob do |f| %>
 			<%= hidden_field_tag :job_id, @result["id"] %>
