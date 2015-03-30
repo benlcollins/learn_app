@@ -22,38 +22,24 @@ class LinksController < ApplicationController
 		@grouped_links = @links.order("created_at").reverse.group_by { |link| link.created_at.getlocal.to_date }
 		
 		# if user is signed in, pass all their favorites/upvotes into @favorites/@upvotes instance variables
-		if user_signed_in?
-			user_favorites
-			user_upvotes
-		end
-		@favorite = Favorite.new
-		@upvote = Upvote.new
+		get_user_fav_and_votes
 
-		# code to pull github jobs
+		# setup a new favorite and new vote instance variables
+		set_new_fav_and_votes
+
+		# logic handling when a tag has been clicked
 		if params[:tag]
-			# binding.pry
 			@tag = params[:tag].gsub(' ','+')
 			@search_tag = Tag.find(params[:tag]).name
 		end
-		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{@tag}")
-		result = JSON.parse(response.body)
 
-		@result = []
-		num = [result.count, 15].min
-		i = 0
-		while i < num do
-			@result.push(result[i])
-			i += 1
-		end
-		# binding.pry
+		# code to pull github jobs
+		get_github_jobs
 	end
 
 	def show
 		@url = @link.link_url
-		description = @link.tags.first.name.gsub(' ','+')
-
-		# try javascript - check ready state, complete, loaded? 
-		# rescu (for future reference)
+		@tag = @link.tags.first.name.gsub(' ','+')
 
 		# call to Browshot api to grab screenshot, created when link submitted
 		@key = ENV['API_KEY']
@@ -61,24 +47,14 @@ class LinksController < ApplicationController
 		browshot_info = HTTParty.get("https://api.browshot.com/api/v1/screenshot/info?id=#{@image_id}&key=#{@key}")
 		@status = JSON.parse(browshot_info.body)["status"]
 
-		if user_signed_in?
-			user_favorites
-			user_upvotes
-		end
-		@favorite = Favorite.new
-		@upvote = Upvote.new
+		# if user is signed in, pass all their favorites/upvotes into @favorites/@upvotes instance variables
+		get_user_fav_and_votes
 
-		# code to pull github jobs		
-		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{description}")
-		result = JSON.parse(response.body)
+		# setup a new favorite and new vote instance variables
+		set_new_fav_and_votes
 
-		@result = []
-		num = [result.count, 10].min
-		i = 0
-		while i < num do
-			@result.push(result[i])
-			i += 1
-		end
+		# code to pull github jobs
+		get_github_jobs	
 	end
 
 	def new
@@ -142,16 +118,22 @@ class LinksController < ApplicationController
 		@link = Link.find(params[:id])
 	end
 
-	def user_favorites
-		@favorites = current_user.favorites.map do |fav|
-			fav.link_id
+	def get_user_fav_and_votes
+		if user_signed_in?
+			@favorites = current_user.favorites.map { |fav| fav.link_id } 
+			@upvotes = current_user.upvotes.map { |vote| vote.link_id } 
 		end
 	end
 
-	def user_upvotes
-		@upvotes = current_user.upvotes.map do |vote|
-			vote.link_id
-		end
+	def set_new_fav_and_votes
+		@favorite = Favorite.new
+		@upvote = Upvote.new
+	end
+
+	def get_github_jobs
+		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{@tag}")
+		result = JSON.parse(response.body)
+		@result = result.first(15)
 	end
 
 end

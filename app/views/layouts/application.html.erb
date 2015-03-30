@@ -23,7 +23,7 @@
 				<% if user_signed_in? %>
 				<li>
 					<div class="user-actions-avatar">
-						<img class="avatar-mini" src="<%= user_gravatar %>">
+						<img class="avatar-mini" src="<%= current_user_gravatar %>">
 					</div>
 					<div class="user-actions-words">
 						Hello <%= link_to current_user.username, user_path(current_user[:id]), :class => "user-actions-link" %>. <%= link_to "Sign out?", destroy_user_session_path, :method => :delete, :class => "user-actions-link" %>

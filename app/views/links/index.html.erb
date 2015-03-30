@@ -12,10 +12,11 @@
 						<%= link_to link.title, link_path(link.id), :class => "group link-title" %>
 						<%= render partial: 'favorite_buttons', locals: {link: link} %>
 						<div class="group link-meta">
-							posted by <%= link_to link.user[:username], user_path(link.user[:id]), :class => "link-meta-submitter" %>
+							shared by <%= link_to link.user[:username], user_path(link.user[:id]), :class => "link-meta-submitter" %>
 							at <%= link.created_at.getlocal.strftime("%l:%M %P") %>
 						</div>
 					</div>
+					
 					<div class="group link-bar-2">
 						<% link.tags.each do |t| %>
 							<%= link_to t.name, tag_path(t), :class => "link-tag" %>

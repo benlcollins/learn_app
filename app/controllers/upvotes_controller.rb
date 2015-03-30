@@ -4,7 +4,6 @@ class UpvotesController < ApplicationController
 
 	def create
 		user = current_user[:id]
-		# binding.pry
 		username = User.find(user).username
 		link = params[:link_id]
 		title = Link.find(link)[:title]
