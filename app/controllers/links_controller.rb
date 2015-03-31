@@ -39,7 +39,8 @@ class LinksController < ApplicationController
 
 	def show
 		@url = @link.link_url
-		@tag = @link.tags.first.name.gsub(' ','+')
+		# binding.pry
+		@link.tags.empty? ? @tag = "" : @tag = @link.tags.first.name.gsub(' ','+')
 
 		# call to Browshot api to grab screenshot, created when link submitted
 		@key = ENV['API_KEY']

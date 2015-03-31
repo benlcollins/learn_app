@@ -18,7 +18,7 @@
 
 	<!-- User favorites display -->
 	<h2 class="user-list-header">
-		You have <%= @favorites.empty? ? "not favorited anything yet!" : @favorites.count.to_s + " Favorites:"%>
+		You have <%= @favorites.empty? ? "not favorited anything yet!" : pluralize(@favorites.count.to_s, "Favorite") %>
 	</h2>
 
 	<table class="user-profile-table">
@@ -32,7 +32,7 @@
 
 	<!-- User favorites display -->
 	<h2 class="user-list-header">
-		You have <%= @savedjobs.empty? ? "no saved jobs yet!" : @savedjobs.count.to_s + " Saved Jobs:"%>
+		You have <%= @savedjobs.empty? ? "no saved jobs yet!" : pluralize(@savedjobs.count.to_s, "Saved Job") %>
 	</h2>
 
 	<table class="user-profile-table">
@@ -46,7 +46,7 @@
 
 	<!-- User submitted links display -->
 	<h2 class="user-list-header">
-		You have <%= @links.empty? ? "not submitted any Resources yet!" : "submitted " + @links.count.to_s + " Resources:"%>
+		You <%= @links.empty? ? "haven't submitted any Resources yet!" : "have submitted " + pluralize(@links.count.to_s, "Resource") %>
 	</h2>
 
 	<table class="user-profile-table">
