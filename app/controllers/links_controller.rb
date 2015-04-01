@@ -6,20 +6,21 @@ class LinksController < ApplicationController
 	def index
 		# basic search functionality
 		if params[:search]
-			@links = Link.where("title LIKE ?", "%#{params[:search]}%")
+			links = Link.where("title LIKE ?", "%#{params[:search]}%")
 			@tag = params[:search].gsub(' ','+')
 			@search_tag = @tag
-			if @links.empty?
+			if links.empty?
 				flash[:alert] = "Sorry, we couldn't find that resource for you"
 			end
 		elsif params[:tag]
-			@links = Link.tagged_with(params[:tag])
+			links = Link.tagged_with(params[:tag])
 		else
-			@links = Link.all
+			links = Link.all
 		end
 
 		# group all of the links into date groups
-		@grouped_links = @links.order("created_at").reverse.group_by { |link| link.created_at.getlocal.to_date }
+		@links = links.page(params[:page]).per(15)
+		@grouped_links = @links.order("created_at DESC").group_by { |link| link.created_at.getlocal.to_date }
 		
 		# if user is signed in, pass all their favorites/upvotes into @favorites/@upvotes instance variables
 		get_user_fav_and_votes

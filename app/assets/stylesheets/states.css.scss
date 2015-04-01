@@ -97,5 +97,9 @@ a.link-details-out:hover {
 .right-summary-box a.small-label:hover {
 	color: orange;
 }
-
+.prev a:hover, .next a:hover {
+	color: white;
+	background-color: #49bb5b;
+	border: 1px solid #2B823A;
+}
 

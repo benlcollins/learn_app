@@ -257,10 +257,10 @@ h2.date-header {
 	padding-bottom: 7px;
 }
 .favorite-button {
-	font: 10px/10px helvetica, arial, verdana;
+	font: 10px/10px "lato", helvetica, arial, verdana;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	background-color: #fff;
+	background-color: #f9f9f9;
 	/*font-weight: bold;*/
 	border: 1px solid #49708f;
 	color: #49708f;
@@ -810,6 +810,44 @@ Misc Navigation styling
 	display: inline-block;
 	float: left;
 }
+
+
+
+/* -------------------------------------------------
+Pagination styling
+------------------------------------------------- */
+.pagination {
+	/*border: 1px solid red;*/
+	width: 30%;
+	margin: 30px auto 0 auto;
+	/*text-align: center;*/
+}
+/*.first, .prev, .next {
+	width: 30%;
+	float: left;
+	text-align: center;
+	margin: 0 1.6%;
+}*/
+.first a, .prev a, .next a {
+	width: 44%;
+	float: left;
+	text-align: center;
+	margin: 0 3%;
+	padding: 7px 0;
+	font: 14px/14px "raleway", helvetica, arial, verdana;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: #3A3A3A;
+	cursor: pointer;
+	border: 1px solid #3A3A3A;
+}
+
+
+
+
+
 
 
 
