@@ -7,13 +7,13 @@ class LinksController < ApplicationController
 		# basic search functionality
 		if params[:search]
 			links = Link.where("title LIKE ?", "%#{params[:search]}%")
-			@tag = params[:search].gsub(' ','+')
-			@search_tag = @tag
 			if links.empty?
 				flash[:alert] = "Sorry, we couldn't find that resource for you"
 			end
 		elsif params[:tag]
 			links = Link.tagged_with(params[:tag])
+			@tag = params[:tag].gsub(' ','+')
+			@tag_name = Tag.find(params[:tag]).name
 		else
 			links = Link.all
 		end
@@ -27,12 +27,6 @@ class LinksController < ApplicationController
 
 		# setup a new favorite and new vote instance variables
 		set_new_fav_and_votes
-
-		# logic handling when a tag has been clicked
-		if params[:tag]
-			@tag = params[:tag].gsub(' ','+')
-			@search_tag = Tag.find(params[:tag]).name
-		end
 
 		# code to pull github jobs
 		get_github_jobs

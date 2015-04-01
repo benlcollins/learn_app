@@ -547,12 +547,14 @@ About page styling
 .about-page h1 {
 	font-family: "raleway";
 	font-weight: 300;
-	padding: 10px 0;
+	padding: 10px 0 5px 0;
+	/*border: 1px solid red;*/
 }
 .about-page h2 {
-	padding: 3px 0;
-	padding-top: 10px;
-	margin-bottom: 10px;
+	/*border: 1px solid red;*/
+	padding: 10px 0 3px 5px;
+	/*padding-top: 10px;*/
+	margin: 8px 0;
 	font-family: "raleway";
 	font-weight: 300;
 	/*text-decoration: underline;*/
@@ -560,7 +562,8 @@ About page styling
 	border-bottom: 1px solid #3a3a3a;
 }
 .about-page h3 {
-	padding: 10px 0;
+	/*border: 1px solid red;*/
+	padding: 10px 0 10px 5px;
 	/*text-decoration: underline;*/
 	font-style: italic;
 }

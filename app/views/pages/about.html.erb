@@ -4,7 +4,7 @@
 
 	<h1>About uplearn</h1>
 
-	<p>Uplearn is a place to find and share the best digital learning resources. Each day new links are added and upvoted by the community. Join our community so you can favorite resources for future reference. Or maybe you want to find and apply to jobs that interest you, or bookmark them to review later. Uplearn is driven by the community, so please feel free to submit your own resources.
+	<p>Uplearn is a place to find and share the best digital learning resources. Each day new links are added and upvoted by the community. Join our community so you can favorite resources for future reference. Or maybe you want to find and apply to jobs that interest you, or bookmark them to review later. Uplearn is a community-driven site, so please join us and contribute learning materials you have found useful.
 
 	<p>This app was created by
 	<a href="http://www.benlcullins.com/" target="_blank">Ben Collins</a> as a final project for 
@@ -15,26 +15,19 @@
 
 	<h2>Introduction</h2>
 
-	<p>This app is built using the following technologies:</p>
-	
-	<ul>
-		<li>Written in Ruby, using...</li>
-		<li>...the Ruby on Rails Framework...</li>
-		<li>...with a Postgresql database on the back-end.</li>
-		<li>Front end built using Sass and pure CSS, designed with SMACSS architecture in mind.</li>
-		<li>Hosted on Heroku...</li>
-		<li>...using Google Analytics code for tracking website usage.</li>
-	</ul>
+	<p>This app is built using the Ruby on Rails Framework hooked up to a Postgresql database and hosted on Heroku. The front end is built using Sass and pure CSS, organized along the lines of Jonathan Snook's <a href="https://smacss.com/book/categorizing" target="_blank">SMACSS architecture</a>.</p>
+
+	<p><a href="https://github.com/benlcollins/learn_app" target="_blank"><%= image_tag("github/GitHub-Mark-32px.png", alt: "GitHub", class: "github-logo") %>&nbsp;&nbsp;Here is the project's source code on GitHub.</a></p>
 
 	<h2>Notes on the dev environment</h2>
 
 	<ul>
 		<li>Mac, running OS X Yosemite</li>
-		<li>Tested on browsers: Chrome, Safari and Firefox</li>
-		<li>Code inspector in Chrome (access using Cmd + Shift + I)</li>
-		<li>Culor Picker extension for Chrome, to find culors used on web pages I liked</li>
+		<li>Tested using Chrome, Safari and Firefox</li>
+		<li>Frequent use of the code inspector in Chrome (Cmd + Shift + I)</li>
+		<li>Color Picker extension for Chrome, to find colors used on web pages I liked</li>
 		<li>Code written in <a href="http://www.sublimetext.com/" target="_blank">Sublime Text 2</a></li>
-		<li>Git version contrul, hosted on <a href="https://github.com/benlcullins" target="_blank">GitHub</a></li>
+		<li>Git version control, hosted on <a href="https://github.com/benlcullins" target="_blank">GitHub</a></li>
 		<li>Markdown files read using <a href="http://25.io/mou/" target="_blank">Mou</a></li>
 		<li><a href="http://spectacleapp.com/" target="_blank">Spectacle</a> for easily sizing and moving windows</li>
 		<li>Terminal for commands, git, manually accessing the database</li>
@@ -44,31 +37,41 @@
 
 	<h2>Core Features</h2>
 
-	<p>These are the fundamental features of the app that I've had in mind since the app was first conceived.</p>
+	<p>These are the fundamental user stories that I began with when designing this app.</p>
 
 	<ul>
-		<li>Homepage showing list of shared links</li>
-		<li>Ability for user to register/login/logout</li>
-		<li>Ability for user to submit new link</li>
-		<li>Click on any link to see the details page and screenshot</li>
-		<li>Basic Search functionality</li>
-		<li>System for user to favorite links</li>
-		<li>GitHub jobs in the sidebar</li>
-		<li>Click on any job to see the details</li>
-		<li>System for user to bookmark job for later</li>
-		<li>Basic Front-End styling</li>
-		<li>About page</li>
-		<li>Gravatar API to show user's avatar</li>
-		<li>User profile page showing activity on app</li>
+		<li>As a user, I want to see a homepage showing resources, so I can find useful ones</li>
+		<li>As a user, I want the ability to register/login/logout, so I can bookmark resources</li>
+		<li>As a user, I want to submit new resources to share with the community</li>
+		<li>As a user, I want to click on any link to see the details page and screenshot, so I can find out more details</li>
+		<li>As a user, I want Basic Search functionality, to help me find resources</li>
+		<li>As a user, I want to favorite resources, so I can find them later</li>
+		<li>As a user, I want to see relevant jobs, so I can find jobs I'm interested in</li>
+		<li>As a user, I want to click on any job to see the details, so I can apply</li>
+		<li>As a user, I want to bookmark jobs, so I can apply for them later</li>
+		<li>As a user, I want to read an About page to find out what this is all about</li>
+		<li>As a user, I want to see a User profile page showing activity on app, so I can learn more about that user</li>
 	</ul>
 
 	<h2>Feature wishlist (coming soon!)</h2>
 
 
-	<h2>Mobile?</h2>
 
-	<p>Yes, I know this site looks like a regurgitated dogs dinner in a mobile browser, and that is not suprising. It was built
-		entirely on a desktop without using any front-end frameworks or themes. Aside from being a great learning experience, it was hugely fun to put this together. One of my top priorities is to make the front-end responsive, or, failing that, implement a responsive framework, such as <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
+	<h2>Mobile issue and other limitations</h2>
+
+	<p>Yes, I know this site looks like a regurgitated dogs dinner in a mobile browser, and I'm well aware of that. It was built entirely on a desktop without using any front-end frameworks or themes. Aside from being a great learning experience, it was a lot of fun to put together. One of my priorities with the app is to make the front-end responsive, or, failing that, implement a responsive framework, such as <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
+
+	<p>There are many other shortcomings with the app, some bigger than others. The ones I'm aware of and working on include:</p>
+
+	<ul>
+		<li>If a link is submitted through the form without an "http://" or "https://", then the app thinks it is a relative links and puts a "https://uplearn.herokuapp.com/links/28/" in the html code</li>
+		<li>No autofill when submitting tags</li>
+		<li>No pagination on users page</li>
+		<li>Only a basic Search functionality</li>
+		<li>The screenshot api takes approximately 10 - 15s to create an image (which is awesome!), but it does mean that a user may click on a show page immediately after submitting a link and not see the screenshot</li>
+		<li>The app is pretty slow! Whether that's my code (most likely!) or the api calls, or the free heroku hosting, I don't know but this is certainly something to address down the line</li>
+		<li>...and many more than I will document soon.</li>
+	</ul>
 
 	<h2>Gems</h2>
 
@@ -81,6 +84,18 @@
 		<li><a href="https://rubygems.org/gems/browshot" target="_blank">Browshot</a>: service for handling the screenshot API calls</li>
 		<li><a href="https://rubygems.org/gems/dotenv-rails" target="_blank">dotenv-rails</a>: for handling proprietary or sensitive data in app (e.g. an API key) and keeping hidden on GitHub</li>
 		<li><a href="https://rubygems.org/gems/rails_12factor" target="_blank">rails_12factor</a>: gem from Heroku to manage the deployment of static assets when hosting with Heroku</li>
+	</ul>
+
+	<h3>Notes on using Devise Authentication Gem</h3>
+
+	<p>I had to modify the registration to include and persist the username to database with custom registration contruller. The fullowing tutorial was extremely useful in helping me work this out: <a href="http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html" target="_blank">http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html</a>.</p>
+
+	<h3>Setting up Tags</h3>
+
+	<p>Built a separate app to test out tagging before trying to implement in main app. Considered using acts-as-taggable-on gem but decided to build my own system, as I only needed limited capability. Fullowing two tutorials were helpful:</p>
+	<ul>
+		<li><a href="http://www.sitepoint.com/tagging-scratch-rails/" target="_blank">http://www.sitepoint.com/tagging-scratch-rails/</a></li>
+		<li><a href="http://railscasts.com/episodes/382-tagging" target="_blank">http://railscasts.com/episodes/382-tagging</a></li>
 	</ul>
 
 	<h2>APIs</h2>
@@ -104,21 +119,6 @@
 	<h3>Gravatar API</h3>
 
 	<p>This is another straightforward API which returns a user's avatar image (if it exists), when you call the API with a hashed version of the user's email. <a href="https://en.gravatar.com/site/implement/" target="_blank">Details here</a>.</p>
-
-
-	<h2>Notes on using Devise Authentication Gem</h2>
-
-	<p>I had to modify the registration to include and persist the username to database with custom registration contruller. The fullowing tutorial was extremely useful in helping me work this out: <a href="http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html" target="_blank">http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html</a>.</p>
-
-	<h2>Setting up Tags</h2>
-
-	<p>Built a separate app to test out tagging before trying to implement in main app. Considered using acts-as-taggable-on gem but decided to build my own system, as I only needed limited capability. Fullowing two tutorials were helpful:</p>
-	<ul>
-		<li><a href="http://www.sitepoint.com/tagging-scratch-rails/" target="_blank">http://www.sitepoint.com/tagging-scratch-rails/</a></li>
-		<li><a href="http://railscasts.com/episodes/382-tagging" target="_blank">http://railscasts.com/episodes/382-tagging</a></li>
-	</ul>
-
-
 
 	<h2>Other useful resources</h2>
 
