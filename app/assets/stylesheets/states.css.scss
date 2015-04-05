@@ -46,7 +46,7 @@ a.user-actions-link:hover {
 	border-bottom: 2px solid orange;
 
 }
-a.link-meta-submitter:hover {
+a.link-meta-submitter:hover, a.link-comments:hover {
 	color: orange;
 	/*text-decoration: underline;*/
 	border-bottom: 2px solid orange;
@@ -102,4 +102,9 @@ a.link-details-out:hover {
 	background-color: #49bb5b;
 	border: 1px solid #2B823A;
 }
-
+a.comment-link:hover {
+	background-color: #ffe4b2;
+	color: orange;
+	/*padding-bottom: 1px;*/
+	border: 1px solid orange;
+}

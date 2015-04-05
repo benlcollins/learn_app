@@ -39,6 +39,11 @@
 	<p class="link-details"><%= @link.about_link %></p>
 	<p class="link-details">This resource was originally published in <%= @link.year %>.</p>
 
+	<!-- this is the comments section -->
+	<div class="comment-heading"><h2>Comments</h2></div>
+    <%= render @comments %>
+    <%= link_to 'Have your say', new_comment_path(@link.id), :class => "comment-link" %>
+
 </div>
 
 <div class="sidebar">

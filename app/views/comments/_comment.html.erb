@@ -1,0 +1,5 @@
+<div class="comment-body">
+	<p><%= comment.body %></p>
+
+	<p>by <strong><%= link_to comment.user.username, user_path(comment.user), :class => "link-meta-submitter" %></strong> on <%= comment.created_at.getlocal.to_date.strftime("%A, %d %B") %></p>
+</div>

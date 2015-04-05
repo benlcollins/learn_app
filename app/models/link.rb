@@ -3,9 +3,10 @@ class Link < ActiveRecord::Base
 	belongs_to :user
 	has_many :favorites, dependent: :destroy
 	has_many :upvotes, dependent: :destroy
+	has_many :comments, dependent: :destroy
 
 	has_many :taggings, dependent: :destroy
-	has_many :tags, through: :taggings, dependent: :destroy
+	has_many :tags, through: :taggings
 	
 	validates :title, presence: true, length: { minimum: 2 }
 	validates :link_url, presence: true, length: { minimum: 5 }, uniqueness: true

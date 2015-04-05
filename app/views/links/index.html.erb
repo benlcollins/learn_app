@@ -13,7 +13,8 @@
 						<%= render partial: 'favorite_buttons', locals: {link: link} %>
 						<div class="group link-meta">
 							shared by <%= link_to link.user[:username], user_path(link.user[:id]), :class => "link-meta-submitter" %>
-							at <%= link.created_at.getlocal.strftime("%l:%M %P") %>
+							at <%= link.created_at.getlocal.strftime("%l:%M %P") %> | 
+						<%= link_to pluralize(link.comments.count, "comment"), link_path(link), :class => "link-comments" %>
 						</div>
 					</div>
 					

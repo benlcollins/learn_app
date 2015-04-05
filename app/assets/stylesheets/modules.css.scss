@@ -242,7 +242,7 @@ Main list styling
 	float: left;
 	/*border: 1px solid blue;*/
 }
-.link-meta-submitter {
+.link-meta-submitter, .link-comments {
 	font-weight: bold;
 	/*color: white;*/
 	color: #49708f;
@@ -849,8 +849,40 @@ Pagination styling
 }
 
 
-
-
+/* -------------------------------------------------
+Comment styling
+------------------------------------------------- */
+.comment-heading {
+	/*border-bottom: 2px solid orange;*/
+	padding: 5px;
+	width: 90%;
+	margin: 25px 0 10px 0;
+}
+.comment-link {
+	/*width: 44%;*/
+	/*float: left;*/
+	text-align: center;
+	/*margin: 100px 0;*/
+	padding: 7px 9px;
+	font: 14px/14px "raleway", helvetica, arial, verdana;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: #3A3A3A;
+	cursor: pointer;
+	border: 1px solid orange;
+	/*margin-bottom: 20px;*/
+}
+.comment-body {
+	margin: 15px 0 20px 0;
+	width: 90%;
+	background-color: #f6f6f6;
+	border-top: 1px solid #49708f;
+	padding: 8px 5px 5px 5px;
+	font: 14px/20px "merriweather", helvetica, arial, verdana;
+	/*letter-spacing: 0.05em;*/
+}
 
 
 

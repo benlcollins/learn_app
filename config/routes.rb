@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'tags/:tag' => 'links#index', as: :tag
   get 'jobs/:id' => 'pages#show_jobs', as: :job
 
+  resources :comments, only: :create
+  get '/comments/(:link_id)/new/', to: 'comments#new', as: :new_comment
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

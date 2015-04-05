@@ -1,0 +1,12 @@
+<%= form_for(@comment) do |f| %>
+  
+    <%= f.hidden_field :link_id %>
+
+    <div class="field">
+	    <%= f.text_area :body, required: true %>
+	</div>
+ 	
+ 	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

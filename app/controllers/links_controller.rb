@@ -49,6 +49,9 @@ class LinksController < ApplicationController
 		# setup a new favorite and new vote instance variables
 		set_new_fav_and_votes
 
+		# get all the comments related to this link
+		@comments = Comment.where(:link_id => @link.id)
+
 		# code to pull github jobs
 		get_github_jobs	
 	end
