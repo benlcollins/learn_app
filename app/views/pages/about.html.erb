@@ -4,14 +4,16 @@
 
 	<h1>About UpLearn</h1>
 
-	<p>UpLearn is a place to find and share the best digital learning resources. Each day new links are added and upvoted by the community. Join us so you can favorite resources for future reference. Or perhaps you'll find jobs that interest you, or bookmark them for later review. UpLearn is a community-driven site, so please join and contribute useful resources you've found.
+	<p>UpLearn is a place to find and share the best digital learning resources. Each day new links are added and upvoted by the community. Join us to be a part of this learning experience by posting your favorite online tutorials or resources, and favoriting ones you like for future reference.</p>
+
+	<p>UpLearn is a community-driven site, so please respect our mission by only sharing resources that will benefit fellow users.</p>
 
 	<p>This app was created by
 	<a href="http://www.benlcollins.com/" target="_blank">Ben Collins</a> as a final project for 
 	<a href="https://generalassemb.ly/education/back-end-web-development/washington-dc" target="_blank">General 
 		Assembly's Back End Web Development</a> course in Washington, DC (Jan 2015 cohort).</p>
 
-	<p>Inspiration for this site came from finding many great tutorials online and wanting a place to share them with others and keep track of ones I liked. It helped that my browser bookmarks were also over-crowded to the point I was struggling to find the good ones or remember why I'd bookmarked things in the first place. For a while, I tried a Google spreadsheet but found that was still a sub-standard way of curating resources I liked. I drew design inspiration from the following two sites:</p>
+	<p>Inspiration for this site came from finding many great tutorials online and wanting a place to keep track of ones I liked and to share them with others. It helped that my browser bookmarks were also over-crowded to the point I was struggling to find things or remember why I'd bookmarked them in the first place. For a while, I tried a Google spreadsheet but found that was still a sub-standard way of curating resources I liked. I also drew design inspiration from the following two sites:</p>
 
 	<ul>
 		<li><a href="http://www.producthunt.com/" target="_blank">Product Hunt</li>
@@ -35,7 +37,7 @@
 		<li>Color Picker extension for Chrome, to find colors on web pages I liked</li>
 		<li>Code written in <a href="http://www.sublimetext.com/" target="_blank">Sublime Text 2</a></li>
 		<li>Git version control, hosted on <a href="https://github.com/benlcollins" target="_blank">GitHub</a></li>
-		<li>Markdown files read using <a href="http://25.io/mou/" target="_blank">Mou</a></li>
+		<li>Markdown files read in <a href="http://25.io/mou/" target="_blank">Mou</a></li>
 		<li><a href="http://spectacleapp.com/" target="_blank">Spectacle</a> for easily sizing and moving windows</li>
 		<li>Terminal for commands, git, manually accessing the database</li>
 		<li><a href="https://evernote.com/" target="_blank">Evernote</a> for organizing thoughts and keeping track of coding tips</li>
@@ -47,17 +49,17 @@
 	<p>These are the fundamental user stories that I began with when designing the app:</p>
 
 	<ul>
-		<li>As a user, I want to see a homepage showing resources, so I can find useful ones</li>
-		<li>As a user, I want the ability to register/login/logout, so I can bookmark resources</li>
-		<li>As a user, I want to submit new resources to share with the community</li>
-		<li>As a user, I want to click on any link to see the details page and screenshot, so I can find out more details</li>
-		<li>As a user, I want Basic Search functionality, to help me find resources</li>
-		<li>As a user, I want to favorite resources, so I can find them later</li>
-		<li>As a user, I want to see relevant jobs, so I can find jobs I'm interested in</li>
-		<li>As a user, I want to click on any job to see the details, so I can apply</li>
-		<li>As a user, I want to bookmark jobs, so I can apply for them later</li>
-		<li>As a user, I want to read an About page to find out what this is all about</li>
-		<li>As a user, I want to see a User profile page showing activity on app, so I can learn more about that user</li>
+		<li>As a user, I want to see a homepage showing resources, so I can find useful ones.</li>
+		<li>As a user, I want the ability to register/login/logout, so I can interact with the app in a way specific to me.</li>
+		<li>As a user, I want to submit new resources to share with the community.</li>
+		<li>As a user, I want to click on any link to see the details page and screenshot, so I can find out more about that resource.</li>
+		<li>As a user, I want a Search function, to help me find resources.</li>
+		<li>As a user, I want to favorite resources, so I can find them later.</li>
+		<li>As a user, I want to see relevant jobs, so I can find jobs I'm interested in.</li>
+		<li>As a user, I want to click on any job to see the details, so I can apply.</li>
+		<li>As a user, I want to bookmark jobs, so I can apply for them later.</li>
+		<li>As a user, I want to read an About page to find out what this is all about.</li>
+		<li>As a user, I want to see a User profile page showing activity on app, so I can learn more about that user.</li>
 	</ul>
 
 	<h2>Feature wishlist</h2>
@@ -80,7 +82,7 @@
 
 	<h2>Mobile? And other limitations</h2>
 
-	<p>Yes, I know this site looks like a regurgitated dogs dinner in a mobile browser, and I'm well aware of that. It was built entirely on a desktop without using any front-end frameworks or themes. Aside from being a great learning experience, it was a lot of fun to put together. One of my priorities with the app is to make the front-end responsive, or, failing that, implement a responsive framework, such as <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
+	<p>Yes, I know this site looks like a regurgitated dogs dinner in a mobile browser, and I'm well aware of that. It was built for desktop viewing, without using any front-end frameworks or themes. Aside from being a great learning experience, it was a lot of fun to put together. One of my priorities with the app is to make the front-end responsive, or, failing that, implement a responsive framework, such as <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
 
 	<p>There are many other shortcomings with the app, some bigger than others. The ones I'm aware of and working on include:</p>
 
@@ -111,7 +113,7 @@
 
 	<h3>Notes on using Devise Authentication Gem</h3>
 
-	<p>I had to modify the registration to include and persist the username to the database with custom registration controller. The following tutorial was extremely useful in helping me work this out: <a href="http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html" target="_blank">Adding custom fields to your devise user model in rails</a>.</p>
+	<p>I had to modify the registration to include and persist the username to the database with a custom registration controller. The following tutorial was extremely useful in helping me work this out: <a href="http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html" target="_blank">Adding custom fields to your devise user model in rails</a>.</p>
 
 	<h3>Notes on using Kaminari Gem</h3>
 
@@ -119,7 +121,7 @@
 
 	<ul>
 		<li>changed the default wording in the en.yml file in locales</li>
-		<li>in the _paginator helper, commented out pieces I didn’t want, to only leave First, Previous, Next buttons</li>
+		<li>in the _paginator helper, commented out pieces I didn’t want, to only leave "Previous" and "Next" buttons</li>
 		<li>used CSS to format these buttons, had to change the “span” to “div” in the relevant partials</li>
 	</ul>
 
@@ -129,20 +131,18 @@
 
 	<h3>Notes on using the closure_tree gem</h3>
 
-	<p>Implementing the comments system was undoubtedly the most challenging part of the app build. There were essentially two phases: 1. build a comments model and way to add new comments (with "new" and "create" actions); and, 2. add the closure_tree to be able to show replies as nested comments belonging to a parent comment.</p>
+	<p>Implementing the comments system was undoubtedly the most challenging part of the app build. There were essentially two phases: 1. build a comments model to add and show new comments (requiring a controller with "new" and "create" actions); and, 2. add the closure_tree to be able to show replies as nested comments belonging to a parent comment.</p>
 
 	<p>I would not have been able to do this without the following tutorial: <a href="http://www.sitepoint.com/nested-comments-rails/" target="_blank">Nested Comments with Rails</a>.</p>
 
-	<p>I followed the tutorial to the letter the first time through. Then I built a second app where the comments were attached to a particular link, so the comment model had a "link_id" attribute. Some hints that took me a while to work out:</p>
+	<p>I followed the tutorial first time through, then I built a second app where the comments were attached to a particular link, so the comment model had a "link_id" attribute. Some considerations:</p>
 
 	<ul>
-		<li>Within the comment.rb model, a comment belongs_to a user and belongs_to a link</li>
-		<li>Within the links.rb model, a link has_many comments</li>
-		<li>Within the user.rb model, a user has_many comments</li>
-		<li>Calling Comment.hash_tree returns an ordered hash of nested hashes (the comments). So, to get comments for a specific link, I had to use a ".select" method to isolate them and only pass those comments through to the link show page.</li>
+		<li>Within the comment.rb model, a comment belongs_to a user and belongs_to a link.</li>
+		<li>Within the links.rb model, a link has_many comments.</li>
+		<li>Within the user.rb model, a user has_many comments.</li>
+		<li>Calling Comment.hash_tree returns an ordered hash of nested hashes (the comments). So, to get comments for a specific link, I had to use an additional ".select" method to isolate them and only pass the relevant comments through to the link show page.</li>
 	</ul>
-
-	<p>Finally, when I was happy I had it working, I added it to the UpLearn app.</p>
 
 	<h3>Setting up Tags</h3>
 
@@ -162,9 +162,9 @@
 
 	<p>One issues is that it takes around 10 - 15s for browshot to grab the screen image, which is pretty amazing, but still means that a user can submit a link and them immediately click to see the details page, but no screenshot image will show.</p>
 
-	<p>So I put the API call into the create method, so when a user submits a link, the call to the API is made then so that the Browshot API ID is saved into the database immediately and the image is being prepared. When a user then visits a detail page, the Browshot API ID is available from the database immediately, and the API is just called to return an existing image (or possibly queued image) and not to create a new image.</p>
+	<p>So I put the API call into the create method, so when a user submits a link, the call to the API is made then so that the Browshot ID is saved into the database immediately and the image is being prepared. When a user then visits a detail page, the Browshot ID is available from the database immediately, and the API is just called to return an existing image (or possibly queued image) and not to create a new image.</p>
 
-	<p>A fuller sulution might incorporate a javascript snippet to test if image is ready and loads, and if not, then to keep looping through a timed call to the API (e.g. every 1 sec) until image loads. You'll see this on my future features list!</p>
+	<p>A fuller sulution might incorporate a javascript snippet to test if the image is ready and loads, and if not, then to keep looping through a timed call to the API (e.g. every 1 sec) until image loads.</p>
 
 	<h3>GitHub API</h3>
 
@@ -178,8 +178,8 @@
 
 	<h3>Icons:</h3>
 
-	<p>It turns out trying to create icons in Paintbrush is a bit of disaster, so I only used one in the end. I got the triangle icon for the upvote button, from <a href="http://www.flaticon.com/free-icon/up-arrow_7645" target="
-		_blank">Flat Icon</a>.</p>
+	<p>It turns out trying to create icons in Paintbrush is a bit of disaster, so I only used one in the end: the triangle icon for the upvote button. I got it <a href="http://www.flaticon.com/free-icon/up-arrow_7645" target="
+		_blank">here</a> from Flat Icon.</p>
 
 	<h3>Books:</h3>
 
@@ -189,6 +189,8 @@
 	</ul>
 
 	<h2>Contact</h2>
+
+	<p>Questions?</p>
 
 	<p>Find me on <a href="https://github.com/benlcollins" target="_blank">Github</a>, <a href="https://twitter.com/benlcollins" target="_blank">Twitter</a> and <a href="https://www.linkedin.com/in/benlcollins" target="_blank">Linkedin</a>.</p>
 
