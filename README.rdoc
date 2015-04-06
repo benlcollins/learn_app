@@ -28,6 +28,7 @@ This project uses a number of Gems but I've tried to not go crazy here to keep d
 * Devise: for handling user authentication
 * Browshot: service for handling the screenshot API calls
 * Kaminari: for handling pagination in the app
+* closure_tree: for handling nesting of the comments
 * dotenv-rails: for handling proprietary or sensitive data in app (e.g. an API key) and keeping hidden on GitHub
 * rails_12factor: gem from Heroku to manage the deployment of static assets when hosting with Heroku
 
@@ -39,14 +40,15 @@ This app uses three API's to get information from third parties: firstly, a scre
 
 These are features I'm looking to implement going forward. Some I'm working on right now, some are just items on the list. Adding this functionality should address the limitations of the app.
 
-* Comments for community discussion
-* Error handling when missing "http://" from submitted link (see limitation section below)
+* Error handling when missing "http://" from submitted link
+* Gatekeeper or spam reporting button to avoid spam links being posted
 * Change the time shown to "shared 5 hours ago" format rather than a precise time
 * Store the screenshot images to a 3rd party, such as Amazon S3
 * User reputation system, based off how many upvotes and favorites the user gets on the resources they have submitted
 * Recommendation system to surface other resources that a user might find interesting
 * Javascript to test if a screenshot image is ready, and if not, keep trying the API every couple of seconds until the image is ready
-* Make the front-end mobile friendly!!
-* Refactor the code!!
+* Caching to speed up the app
+* Make the front-end mobile friendly
+* Refactor the code!
 
 More details are available on the app's about page: https://uplearn.herokuapp.com/about
