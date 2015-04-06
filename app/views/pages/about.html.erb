@@ -11,7 +11,7 @@
 	<a href="https://generalassemb.ly/education/back-end-web-development/washington-dc" target="_blank">General 
 		Assembly's Back End Web Development</a> course in Washington, DC (Jan 2015 cohort).</p>
 
-	<p>Inspiration for this site came from finding so many great tutorials online and wanting a place to share them with others and keep track of ones I liked. It helped that my browser bookmarks were also over-filled to the point I was struggling to find the good ones or remember why I'd bookmarked them in the first place. For a while, I tried a Google spreadsheet but found that was also a sub-standard way of curating resources I liked. I also drew design inspiration from the following two sites:</p>
+	<p>Inspiration for this site came from finding many great tutorials online and wanting a place to share them with others and keep track of ones I liked. It helped that my browser bookmarks were also over-crowded to the point I was struggling to find the good ones or remember why I'd bookmarked things in the first place. For a while, I tried a Google spreadsheet but found that was still a sub-standard way of curating resources I liked. I drew design inspiration from the following two sites:</p>
 
 	<ul>
 		<li><a href="http://www.producthunt.com/" target="_blank">Product Hunt</li>
@@ -31,10 +31,10 @@
 	<ul>
 		<li>Mac, running OS X Yosemite</li>
 		<li>Tested using Chrome, Safari and Firefox</li>
-		<li>Frequent use of the code inspector in Chrome (Cmd + Shift + I)</li>
+		<li>Frequent use of the code inspector in Chrome</li>
 		<li>Color Picker extension for Chrome, to find colors on web pages I liked</li>
 		<li>Code written in <a href="http://www.sublimetext.com/" target="_blank">Sublime Text 2</a></li>
-		<li>Git version control, hosted on <a href="https://github.com/benlcullins" target="_blank">GitHub</a></li>
+		<li>Git version control, hosted on <a href="https://github.com/benlcollins" target="_blank">GitHub</a></li>
 		<li>Markdown files read using <a href="http://25.io/mou/" target="_blank">Mou</a></li>
 		<li><a href="http://spectacleapp.com/" target="_blank">Spectacle</a> for easily sizing and moving windows</li>
 		<li>Terminal for commands, git, manually accessing the database</li>
@@ -66,15 +66,15 @@
 
 	<ul>
 		<li><strike>Pagination &#10003;</strike></li>
-		<li>Comments for community discussion</li>
-		<li>Error handling when missing "http://" from submitted link (see limitation section below)</li>
-		<li>Change the time shown to "shared 5 hours ago" format rather than a precise time</li>
-		<li>Store the screenshot images to a 3rd party, such as Amazon S3</li>
-		<li>User reputation system, based off how many upvotes and favorites the user gets on the resources they have submitted	</li>
-		<li>Recommendation system to surface other resources that a user might find interesting</li>
-		<li>Javascript to test if a screenshot image is ready, and if not, keep trying the API every couple of seconds until the image is ready</li>
-		<li>Make the front-end mobile friendly</li>
-		<li>Write tests to ensure code and any changes still adhere to the desired functionality</li>
+		<li><strike>Comments for community discussion &#10003;</strike></li>
+		<li>Error handling when missing "http://" from submitted link (see limitation section below).</li>
+		<li>Change the time shown to "shared 5 hours ago" format rather than a precise time.</li>
+		<li>Store the screenshot images to a 3rd party, such as Amazon S3.</li>
+		<li>User reputation system, based off how many upvotes and favorites the user gets on the resources they have submitted	.</li>
+		<li>Recommendation system to surface other resources that a user might find interesting.</li>
+		<li>Javascript to test if a screenshot image is ready, and if not, keep trying the API every couple of seconds until the image is ready.</li>
+		<li>Make the front-end mobile friendly.</li>
+		<li>Write tests to ensure code and any changes still adhere to the desired functionality.</li>
 		<li>Refactor the code!</li>
 	</ul>
 
@@ -85,11 +85,12 @@
 	<p>There are many other shortcomings with the app, some bigger than others. The ones I'm aware of and working on include:</p>
 
 	<ul>
-		<li>If a link is submitted through the form without an "http://" or "https://", then the app thinks it is a relative links and adds a "https://uplearn.herokuapp.com/links/" in anchor tag in html</li>
-		<li>No gatekeeper system to prevent abusive links (spammy links) being submitted</li>
-		<li>No autofill when submitting tags</li>
-		<li>Only a very basic Search functionality</li>
-		<li>The screenshot api (which is awesome!) takes approximately 10 - 15s to create an image, but it does mean that a user may click on a show page immediately after submitting a link and not see the screenshot</li>
+		<li>If a link is submitted through the form without an "http://" or "https://", then the app thinks it is a relative links and adds a "https://uplearn.herokuapp.com/links/" in anchor tag in html.</li>
+		<li>No gatekeeper system to prevent abusive links (spammy links) being submitted.</li>
+		<li>No autofill when submitting tags.</li>
+		<li>Only a very basic Search functionality.</li>
+		<li>The site is pretty slow! I want to learn how to implement caching, specifically to reduce the API calls, so that I can speed up page load times.</li>
+		<li>The screenshot api (which is awesome!) takes approximately 10 - 15s to create an image, but it does mean that a user may click on a show page immediately after submitting a link and not see the screenshot.</li>
 		<li>...and many more that I haven't found yet!</li>
 	</ul>
 
@@ -102,14 +103,15 @@
 		<li><a href="https://rubygems.org/gems/httparty" target="_blank">Httparty</a>: for calling APIs</li>
 		<li><a href="https://rubygems.org/gems/devise" target="_blank">Devise</a>: for handling user authentication</li>
 		<li><a href="https://rubygems.org/gems/browshot" target="_blank">Browshot</a>: service for handling the screenshot API calls</li>
-		<li><a href="https://rubygems.org/gems/kaminari/versions/0.16.3" target="_blank">Kaminari</a>: for handling pagination in the app</li>
+		<li><a href="https://rubygems.org/gems/kaminari/" target="_blank">Kaminari</a>: for handling pagination in the app</li>
+		<li><a href="https://rubygems.org/gems/closure_tree/" target="_blank">Closure_tree</a>: for handling the nesting of comments</li>
 		<li><a href="https://rubygems.org/gems/dotenv-rails" target="_blank">dotenv-rails</a>: for handling proprietary or sensitive data in app (e.g. an API key) and keeping hidden on GitHub</li>
 		<li><a href="https://rubygems.org/gems/rails_12factor" target="_blank">rails_12factor</a>: gem from Heroku to manage the deployment of static assets when hosting with Heroku</li>
 	</ul>
 
 	<h3>Notes on using Devise Authentication Gem</h3>
 
-	<p>I had to modify the registration to include and persist the username to the database with custom registration controller. The following tutorial was extremely useful in helping me work this out: <a href="http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html" target="_blank">http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html</a>.</p>
+	<p>I had to modify the registration to include and persist the username to the database with custom registration controller. The following tutorial was extremely useful in helping me work this out: <a href="http://www.jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html" target="_blank">Adding custom fields to your devise user model in rails</a>.</p>
 
 	<h3>Notes on using Kaminari Gem</h3>
 
@@ -121,16 +123,33 @@
 		<li>used CSS to format these buttons, had to change the “span” to “div” in the relevant partials</li>
 	</ul>
 
-	<p>The following tutorial was also very helpful: <a href="http://railscasts.com/episodes/254-pagination-with-kaminari" target="_blank">http://railscasts.com/episodes/254-pagination-with-kaminari</a>.</p>
+	<p>The following tutorial was also very helpful: <a href="http://railscasts.com/episodes/254-pagination-with-kaminari" target="_blank">Pagination with kaminari</a>.</p>
 
 	<p>There is also great info in the <a href="https://github.com/amatsuda/kaminari" target="_blank">Kaminari source code pages on GitHub</a>.</p>
+
+	<h3>Notes on using the closure_tree gem</h3>
+
+	<p>Implementing the comments system was undoubtedly the most challenging part of the app build. There were essentially two phases: 1. build a comments model and way to add new comments (with "new" and "create" actions); and, 2. add the closure_tree to be able to show replies as nested comments belonging to a parent comment.</p>
+
+	<p>I would not have been able to do this without the following tutorial: <a href="http://www.sitepoint.com/nested-comments-rails/" target="_blank">Nested Comments with Rails</a>.</p>
+
+	<p>I followed the tutorial to the letter the first time through. Then I built a second app where the comments were attached to a particular link, so the comment model had a "link_id" attribute. Some hints that took me a while to work out:</p>
+
+	<ul>
+		<li>Within the comment.rb model, a comment belongs_to a user and belongs_to a link</li>
+		<li>Within the links.rb model, a link has_many comments</li>
+		<li>Within the user.rb model, a user has_many comments</li>
+		<li>Calling Comment.hash_tree returns an ordered hash of nested hashes (the comments). So, to get comments for a specific link, I had to use a ".select" method to isolate them and only pass those comments through to the link show page.</li>
+	</ul>
+
+	<p>Finally, when I was happy I had it working, I added it to the UpLearn app.</p>
 
 	<h3>Setting up Tags</h3>
 
 	<p>I built a separate app to test out tagging before trying to implement it in the main app. I considered two possible routes: firstly, using acts-as-taggable-on gem, or secondly making a very simple version myself. I decided on the latter, as I only needed limited capability. These two tutorials were very helpful in showing how to do this:</p>
 	<ul>
-		<li><a href="http://www.sitepoint.com/tagging-scratch-rails/" target="_blank">http://www.sitepoint.com/tagging-scratch-rails/</a></li>
-		<li><a href="http://railscasts.com/episodes/382-tagging" target="_blank">http://railscasts.com/episodes/382-tagging</a></li>
+		<li><a href="http://www.sitepoint.com/tagging-scratch-rails/" target="_blank">Tagging from scratch in rails</a></li>
+		<li><a href="http://railscasts.com/episodes/382-tagging" target="_blank">Railscast episode 382 on tagging</a></li>
 	</ul>
 
 	<h2>APIs</h2>
@@ -168,5 +187,11 @@
 		<li><a href="http://learn.shayhowe.com/html-css/" target="_blank">Learn HTML and CSS by Shay Howe</a> - I can't recommend this highly enough, a great introduction to front-end</li>
 		<li><a href="http://www.amazon.com/Well-Grounded-Rubyist-David-Black/dp/1617291692/" target="_blank">The Well-Grounded Rubyist - David Black</a></li>
 	</ul>
+
+	<h2>Contact</h2>
+
+	<p>Find me on <a href="https://github.com/benlcollins" target="_blank">Github</a>, <a href="https://twitter.com/benlcollins" target="_blank">Twitter</a> and <a href="https://www.linkedin.com/in/benlcollins" target="_blank">Linkedin</a>.</p>
+
+	<p>Or get in touch by email at: benlcollins [at] gmail.com</p>
 
 </div>
