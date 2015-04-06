@@ -1,5 +1,5 @@
 <div class="comment-body">
-	<p><%= comment.body %></p>
-
-	<p>by <strong><%= link_to comment.user.username, user_path(comment.user), :class => "link-meta-submitter" %></strong> on <%= comment.created_at.getlocal.to_date.strftime("%A, %d %B") %></p>
+	<%= comment.body %>
+	<p class="comment-details"><%= link_to "Reply", new_reply_path(comment.link_id, comment.id), :class => "link-meta-submitter" %></p>
+	<p class="comment-details">by <%= link_to comment.user.username, user_path(comment.user), :class => "link-meta-submitter" %> on <%= comment.created_at.getlocal.strftime("%l:%M %P %A, %d %B") %></p>
 </div>

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :comments, only: :create
   get '/comments/(:link_id)/new/', to: 'comments#new', as: :new_comment
+  get '/comments/(:link_id)/new/(:parent_id)', to: 'comments#new', as: :new_reply
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

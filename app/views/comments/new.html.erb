@@ -5,5 +5,9 @@
 
 	<h1>Add new comment:</h1>
 
+	<% if @comment.parent %>
+		<%= render 'comment', comment: @comment.parent %>
+	<% end %>
+
 	<%= render 'comment_form' %>
 </div>

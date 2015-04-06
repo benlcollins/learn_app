@@ -37,11 +37,11 @@
 
 	<!-- <h2>Endorsement and further details:</h2> -->
 	<p class="link-details"><%= @link.about_link %></p>
-	<p class="link-details">This resource was originally published in <%= @link.year %>.</p>
+	<!-- <p class="link-details">This resource was originally published in <%= @link.year %>.</p> -->
 
 	<!-- this is the comments section -->
 	<div class="comment-heading"><h2>Comments</h2></div>
-    <%= render @comments %>
+    <%= comments_tree_for @comments %>
     <%= link_to 'Have your say', new_comment_path(@link.id), :class => "comment-link" %>
 
 </div>
