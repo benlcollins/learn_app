@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
 
 	before_action :authenticate_user!, except: [:index, :show]
-	before_action :link_find, except: [:index, :new, :create, :show_jobs]
+	before_action :link_find, except: [:index, :new, :create]
 
 	def index
 		# basic search functionality
