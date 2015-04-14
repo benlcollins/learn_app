@@ -19,9 +19,14 @@ class LinksController < ApplicationController
 		end
 
 		# group all of the links into date groups
-		@links = links.page(params[:page]).per(15)
+		@links = links.includes(:tags, :user).page(params[:page]).per(15)
 		@grouped_links = @links.order("created_at DESC").group_by { |link| link.created_at.getlocal.to_date }
 		
+		# work to reduce SQL queries
+		@upvotes_with_count = Upvote.group("upvotes.link_id").count
+		@comments_count = Comment.group("comments.link_id").count
+
+
 		# if user is signed in, pass all their favorites/upvotes into @favorites/@upvotes instance variables
 		get_user_fav_and_votes
 
@@ -42,6 +47,10 @@ class LinksController < ApplicationController
 		@image_id = @link.browshot_id
 		browshot_info = HTTParty.get("https://api.browshot.com/api/v1/screenshot/info?id=#{@image_id}&key=#{@key}")
 		@status = JSON.parse(browshot_info.body)["status"]
+
+		# workings on eager loading
+		@upvotes_with_count = Upvote.group("upvotes.link_id").count
+		@comments_count = Comment.group("comments.link_id").count
 
 		# if user is signed in, pass all their favorites/upvotes into @favorites/@upvotes instance variables
 		get_user_fav_and_votes
@@ -133,6 +142,7 @@ class LinksController < ApplicationController
 		response = HTTParty.get("https://jobs.github.com/positions.json?description=#{@tag}")
 		result = JSON.parse(response.body)
 		@result = result.first(15)
+		# @result = []
 	end
 
 end

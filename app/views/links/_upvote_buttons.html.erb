@@ -3,7 +3,8 @@
 	<%= form_for @upvote do |f| %>
 		<%= f.submit "+", :class => "upvote-button" %>
 	<% end %>
-	<div class="upvote-count"><%= link.upvotes.count %></div>
+	
+	<div class="upvote-count"><%= @upvotes_with_count[link.id] ||= 0 %></div>
 
 <!-- otherwise, user is logged in, so need to determine if this link is upvote or not -->
 <!-- instance variable @upvotes is an array containing all of current user's upvotes -->
@@ -15,13 +16,13 @@
 		<%= form_for current_user.upvotes.find_by(:link_id => link.id), :method => :delete do |f| %>
 			<%= f.submit "-", :class => "downvote-button" %>
 		<% end %>
-		<div class="downvote-count"><%= link.upvotes.count %></div>
+		<div class="downvote-count"><%= @upvotes_with_count[link.id] ||= 0 %></div>
 	<% else %>
 		<%= form_for @upvote do |f| %>
 			<%= hidden_field_tag :link_id, link.id %>
 			<%= f.submit "+", :class => "upvote-button" %>
 		<% end %>
-		<div class="upvote-count"><%= link.upvotes.count %></div>
+		<div class="upvote-count"><%= @upvotes_with_count[link.id] ||= 0 %></div>
 	<% end %>
 
 <% end %>
