@@ -83,13 +83,15 @@
 
 	<h2>Mobile? And other limitations</h2>
 
-	<p>Yes, I know this site looks like a regurgitated dogs dinner in a mobile browser, and I'm well aware of that. It was built for desktop viewing, without using any front-end frameworks or themes. Aside from being a great learning experience, it was a lot of fun to put together. One of my priorities with the app is to make the front-end responsive, or, failing that, implement a responsive framework, such as <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
+	<p>Yes, I know this site looks like a regurgitated dogs dinner in a mobile browser, and I'm well aware of that. This first version was built without using any front-end frameworks or themes, just hand-coded HTML and CSS. Aside from being a great learning experience, it was a lot of fun to put together. One of my priorities with the app is to make the front-end responsive, or, failing that, implement a responsive framework, such as <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
 
 	<p>There are many other shortcomings with the app, some bigger than others. The ones I'm aware of and working on include:</p>
 
 	<ul>
-		<li><strike>Fix the N + 1 problem, making repeated calls to database when rendering index page &#10003;</strike></li>
-		<li><strike>Error handling when missing "http://" from submitted link. Add http to URL if it's not there &#10003;</strike></li>
+		<li><strike>Fix the N + 1 problem: reducing calls to database when rendering index page &#10003;</strike>
+			<a href="http://www.benlcollins.com/sql/fixing-the-n1-problem-in-my-rails-application/" target="_blank">details here</a>
+		</li>
+		<li><strike>Dealing with "http://" or "https://" missing from submitted link, by checking for this and prepending to link if not there &#10003;</strike></li>
 		<li>No gatekeeper system to prevent abusive links (spammy links) being submitted.</li>
 		<li>No autofill when submitting tags.</li>
 		<li>Only a very basic Search functionality.</li>
