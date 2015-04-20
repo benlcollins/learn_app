@@ -1,3 +1,6 @@
+# require uri parser library
+require 'uri'
+
 class Link < ActiveRecord::Base
 
 	belongs_to :user
@@ -10,6 +13,8 @@ class Link < ActiveRecord::Base
 	
 	validates :title, presence: true, length: { minimum: 2 }
 	validates :link_url, presence: true, length: { minimum: 5 }, uniqueness: true
+
+	before_save :url_check
 
 	# setter method for tag_list
 	def tag_list=(names)
@@ -25,6 +30,16 @@ class Link < ActiveRecord::Base
 
 	def self.tagged_with(name)
 		Tag.find(name).links
+	end
+
+	# new stuff
+	protected
+
+	def url_check
+		u = URI(self.link_url)
+		if (!u.scheme)
+			self.link_url = "http://#{self.link_url}"
+		end
 	end
 
 end

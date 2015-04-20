@@ -13,18 +13,20 @@
 	<a href="https://generalassemb.ly/education/back-end-web-development/washington-dc" target="_blank">General 
 		Assembly's Back End Web Development</a> course in Washington, DC (Jan 2015 cohort).</p>
 
-	<p>Inspiration for this site came from finding many great tutorials online and wanting a place to keep track of ones I liked and to share them with others. It helped that my browser bookmarks were also over-crowded to the point I was struggling to find things or remember why I'd bookmarked them in the first place. For a while, I tried a Google spreadsheet but found that was still a sub-standard way of curating resources I liked. I also drew design inspiration from the following two sites:</p>
+	<p>Inspiration for this site came from finding many great tutorials online and wanting a place to keep track of ones I liked and to share them with others. It helped that my browser bookmarks were also over-crowded to the point I was struggling to find things or remember why I'd bookmarked them in the first place. For a while, I tried a Google spreadsheet but found that was still a sub-standard way of curating resources I liked.</p> 
+
+	<p>Of course, this idea of sharing links is not new. <a href="http://www.reddit.com/" target="_blank">Reddit</a> is huge, we all know that, but there are two other sites that I came across whilst building UpLearn that inspired me:</p>
 
 	<ul>
-		<li><a href="http://www.producthunt.com/" target="_blank">Product Hunt</li>
-		<li><a href="http://www.reddit.com/" target="_blank">Reddit</a></li>
+		<li><a href="http://www.producthunt.com/" target="_blank">Product Hunt</a> - a community site built around sharing new products</li>
+		<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a> - a site for developers to share links, which I discovered across recently</li>
 	</ul>
 
 	<h1>Technology</h1>
 
 	<h2>Introduction</h2>
 
-	<p>This app is built using the Ruby on Rails Framework hooked up to a Postgresql database and hosted on Heroku. The front end is built using Sass and pure CSS, organized along the lines of Jonathan Snook's <a href="https://smacss.com/book/categorizing" target="_blank">SMACSS architecture</a>.</p>
+	<p>This app is built using the Ruby on Rails Framework hooked up to a PostgreSQL database and hosted on Heroku. The front end is built using Sass and pure CSS, organized along the lines of Jonathan Snook's <a href="https://smacss.com/book/categorizing" target="_blank">SMACSS architecture</a>.</p>
 
 	<p><a href="https://github.com/benlcollins/learn_app" target="_blank"><%= image_tag("github/GitHub-Mark-32px.png", alt: "GitHub", class: "github-logo") %>&nbsp;&nbsp;Check out the project's source code on GitHub.</a></p>
 
@@ -70,8 +72,6 @@
 		<li><strike>Pagination &#10003;</strike></li>
 		<li><strike>Change the time shown to "shared 5 hours ago" format rather than a precise time &#10003;</strike></li>
 		<li><strike>Comments for community discussion &#10003;</strike></li>
-		<li><strike>Fix the N + 1 problem, making repeated calls to database when rendering index page &#10003;</strike></li>
-		<li>Error handling when missing "http://" from submitted link (see limitation section below)</li>
 		<li>Store the screenshot images to a 3rd party, such as Amazon S3</li>
 		<li>User reputation system, based off how many upvotes and favorites the user gets on the resources they have submitted</li>
 		<li>Recommendation system to surface other resources that a user might find interesting</li>
@@ -88,11 +88,12 @@
 	<p>There are many other shortcomings with the app, some bigger than others. The ones I'm aware of and working on include:</p>
 
 	<ul>
-		<li>If a link is submitted through the form without an "http://" or "https://", then the app thinks it is a relative links and adds a "https://uplearn.herokuapp.com/links/" in anchor tag in html.</li>
+		<li><strike>Fix the N + 1 problem, making repeated calls to database when rendering index page &#10003;</strike></li>
+		<li><strike>Error handling when missing "http://" from submitted link. Add http to URL if it's not there &#10003;</strike></li>
 		<li>No gatekeeper system to prevent abusive links (spammy links) being submitted.</li>
 		<li>No autofill when submitting tags.</li>
 		<li>Only a very basic Search functionality.</li>
-		<li>The site is pretty slow! I want to learn how to implement caching, specifically to reduce the API calls, so that I can speed up page load times.</li>
+		<li>Implement caching, specifically to reduce the API calls, so that I can speed up page load times.</li>
 		<li>The screenshot api (which is awesome!) takes approximately 10 - 15s to create an image, but it does mean that a user may click on a show page immediately after submitting a link and not see the screenshot.</li>
 		<li>...and many more that I haven't found yet!</li>
 	</ul>
