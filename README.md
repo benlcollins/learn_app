@@ -48,6 +48,7 @@ These are features I'm looking to implement going forward. Some I'm working on r
 * User reputation system, based off how many upvotes and favorites the user gets on the resources they have submitted
 * Recommendation system to surface other resources that a user might find interesting
 * Javascript to test if a screenshot image is ready, and if not, keep trying the API every couple of seconds until the image is ready
+* Move external request for screenshots into a background process, using a library like Resque
 * Caching to speed up the app
 * Make the front-end mobile friendly
 * Refactor the code!
